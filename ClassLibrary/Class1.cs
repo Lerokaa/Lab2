@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cons_v1
+namespace ClassLibrary
 {
-    internal class Program
+    public class Class1
     {
-        static void Main(string[] args)
-        {
-        }
+       
     }
 }

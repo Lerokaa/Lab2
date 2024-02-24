@@ -4,30 +4,30 @@ using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
-// связанные с этой сборкой.
-[assembly: AssemblyTitle("cons_v1")]
+// связанные со сборкой.
+[assembly: AssemblyTitle("ClassLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("cons_v1")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("ClassLibrary")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
-// из модели COM задайте для атрибута ComVisible этого типа значение true.
+// COM, задайте атрибуту ComVisible значение TRUE для этого типа.
 [assembly: ComVisible(false)]
 
-// Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("8acee830-ab8f-4816-98be-62622e1bdbd5")]
+// Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
+[assembly: Guid("b7e0c9e5-4c0c-497e-8fec-4a4e3175aa60")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
 //      Основной номер версии
 //      Дополнительный номер версии
 //      Номер сборки
-//      Номер редакции
+//      Редакция
 //
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
