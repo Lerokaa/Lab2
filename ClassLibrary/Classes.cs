@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Class1
+    public class Classes
     {
        
+    }
+    public class Audience
+    {
+
+    }
+    public class Subject
+    {
+
+    }
+    public class Group
+    {
+
     }
 }
