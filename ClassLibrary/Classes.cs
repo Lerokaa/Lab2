@@ -22,4 +22,15 @@ namespace ClassLibrary
     {
 
     }
+    public class Speciality 
+    {
+    string Name;
+    string ReducationName;
+    public Speciality(string Name, string RedName)
+    {
+        this.Name = Name;
+        this.ReducationName = RedName;
+    }
+
+    }
 }
