@@ -52,10 +52,5 @@ namespace ClassLibrary
             this.group = group;
             this.birthDate = birthDate;
         }
-
-        public Student(string lastName, string firstName, string patronymic, string group)
-            : this(lastName, firstName, patronymic, group, DateTime.Now)
-        {
-        }
     }
 }
