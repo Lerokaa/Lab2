@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class Student
+    public class Lesson
     {
         private string lastName;
         private string firstName;
@@ -44,7 +44,7 @@ namespace ClassLibrary
             set { birthDate = value; }
         }
 
-        public Student(string lastName, string firstName, string patronymic, string group, DateTime birthDate)
+        public Lesson(string lastName, string firstName, string patronymic, string group, DateTime birthDate)
         {
             this.lastName = lastName;
             this.firstName = firstName;
