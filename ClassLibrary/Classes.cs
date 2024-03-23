@@ -6,38 +6,56 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Lesson
+    class Student
     {
-        private string Surname;
-        private string Name;
-        private string Middlename;
+        private string lastName;
+        private string firstName;
+        private string patronymic;
         private string group;
-        private DateTime DR;
+        private DateTime birthDate;
 
-        public Lesson(string Surname, string name, string Middlename, string group, DateTime DR)
+        public string LastName
         {
-            date = Date != default ? Date : DateTime.Now;
-            name = Name;
-            surname = Surname;
-            middlename = Middlename;
-            group = Group;
+            get { return lastName; }
+            set { lastName = value; }
         }
-    }
-    
-    public class Classes
-    {
-       
-    }
-    public class Audience
-    {
 
-    }
-    public class Subject
-    {
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
 
-    }
-    public class Group
-    {
+        public string Patronymic
+        {
+            get { return patronymic; }
+            set { patronymic = value; }
+        }
 
+        public string Group
+        {
+            get { return group; }
+            set { group = value; }
+        }
+
+        public DateTime BirthDate
+        {
+            get { return birthDate; }
+            set { birthDate = value; }
+        }
+
+        public Student(string lastName, string firstName, string patronymic, string group, DateTime birthDate)
+        {
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.patronymic = patronymic;
+            this.group = group;
+            this.birthDate = birthDate;
+        }
+
+        public Student(string lastName, string firstName, string patronymic, string group)
+            : this(lastName, firstName, patronymic, group, DateTime.Now)
+        {
+        }
     }
 }
