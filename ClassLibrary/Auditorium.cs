@@ -12,26 +12,27 @@ namespace ClassLibrary
     public class Auditorium
     {
         private string name;
-        private string responsibleEmployee;
+        private Employee Employee;
         private int seatingCapacity;
         private int windowCount;
-        private List<string> equipmentList;
+        private Equipment Equipment;
         private DateTime creationDate;
         //Конструктор класса
-        public Auditorium(string name, string responsibleEmployee, int seatingCapacity, int windowCount, List<string> equipmentList, DateTime? creationDate = null)
+        public Auditorium(string name, Employee Employee, int seatingCapacity, int windowCount, Equipment Equipment, DateTime? creationDate = null)
         {
             this.name = name;
-            this.responsibleEmployee = responsibleEmployee;
+            this.Employee = Employee;
             this.seatingCapacity = seatingCapacity;
             this.windowCount = windowCount;
-            this.equipmentList = equipmentList;
-            this.creationDate = creationDate ?? DateTime.Now;
+            this.Equipment = Equipment;
+            this.creationDate = creationDate DateTime.Now;
         }
         // Метод для добавления оборудования в список
-        public void AddEquipment(string equipment)
+        public void AddEquipment(string Equipment)
         {
-            equipmentList.Add(equipment);
+            equipmentList.Add(Equipment);
         }
         
     }
+
 }
