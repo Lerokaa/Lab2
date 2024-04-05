@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auditorium.cs" />
+    <Compile Include="Speciality.cs" />
     <Compile Include="Lesson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
