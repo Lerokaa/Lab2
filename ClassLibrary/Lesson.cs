@@ -13,7 +13,7 @@ namespace ClassLibrary
 		private DateTime _timeRestStart;
 		private DateTime _timeRestEnd;
 		private Smena _smena;
-		public (DateTime timeParaStart, DateTime timeParaEnd, DateTime timeRestStart, DateTime timeRestEnd, Smena Smena)
+		public Lesson(DateTime timeParaStart, DateTime timeParaEnd, DateTime timeRestStart, DateTime timeRestEnd, Smena Smena)
 		{
 		    _timeParaStart = timeParaStart;
 		    _timeParaEnd = timeParaEnd;
