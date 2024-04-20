@@ -11,12 +11,12 @@ namespace ClassLibrary
     /// </summary>
     public class Classroom
     {
-        private string name;
-        private Employee Employee;
-        private int seatingCapacity;
-        private int windowCount;
-        private List<string> equipmentList; //Нет 15 варианта, поэтому так
-        private DateTime creationDate;
+        private readonly string name;
+        private readonly Employee Employee;
+        private readonly int seatingCapacity;
+        private readonly int windowCount;
+        private readonly List<string> equipmentList; //Нет 15 варианта, поэтому так
+        private readonly DateTime creationDate;
         //Конструктор класса
         public Classroom(string name, Employee Employee, int seatingCapacity, int windowCount, List<string> equipmentList, DateTime? creationDate = null)
         {
@@ -26,11 +26,6 @@ namespace ClassLibrary
             this.windowCount = windowCount;
             this.equipmentList = equipmentList;
             this.creationDate = creationDate ?? DateTime.Now;
-        }
-        // Метод для добавления оборудования в список
-        public void AddEquipment(string equipment)
-        {
-            equipmentList.Add(equipment);
         }
 
     }
