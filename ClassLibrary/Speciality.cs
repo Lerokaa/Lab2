@@ -8,5 +8,14 @@ namespace ClassLibrary
 {
     internal class Speciality
     {
+        //https://docs.google.com/document/d/1pDw7bbBJDmeqT8VVwp68BSOF_4yd9cNb9xpH_q2KW0E/edit
+        protected string Name;
+        protected string RedName;
+        Speciality() { }
+        Speciality(string name, string redName)
+        {
+            Name = name;
+            RedName = redName;
+        }
     }
 }
