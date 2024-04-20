@@ -22,19 +22,15 @@ namespace ClassLibrary
         }
 
         // Методы доступа
-        public string GetTitle()
-        {
-            return Title;
+      
+        public string Title{
+            get{return title;}
         }
-
-        public decimal GetSalary()
-        {
-            return Salary;
+         public decimal Salary{
+            get{return salary;}
         }
-
-        public string GetDepartment()
-        {
-            return Department;
+         public string Department{
+            get{return department;}
         }
     }
 
