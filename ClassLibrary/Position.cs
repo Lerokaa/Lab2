@@ -9,9 +9,9 @@ namespace ClassLibrary
     public class Position
     {
         // Закрытые поля
-        private string Title;
-        private decimal Salary;
-        private string Department;
+        private string title;
+        private decimal salary;
+        private string department;
 
         // Конструктор
         public Position(string title, decimal salary, string department)
