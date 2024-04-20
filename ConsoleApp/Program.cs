@@ -40,7 +40,8 @@ namespace ConsoleApp
                         case ConsoleKey.D1:
                         case ConsoleKey.NumPad1:
                             {
-                                
+                                Lesson lesson = Creator.CeateLesson();
+                                Printer.PrintLesson(lesson);
                                 break;
                             }
                         case ConsoleKey.D2:
