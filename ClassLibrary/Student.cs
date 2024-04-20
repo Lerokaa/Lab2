@@ -44,7 +44,7 @@ namespace ClassLibrary
             set { birthDate = value; }
         }
 
-        public Lesson(string lastName, string firstName, string patronymic, string group, DateTime birthDate)
+        public Student(string lastName, string firstName, string patronymic, string group, DateTime birthDate)
         {
             this.lastName = lastName;
             this.firstName = firstName;
