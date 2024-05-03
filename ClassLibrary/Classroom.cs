@@ -15,10 +15,10 @@ namespace ClassLibrary
         private readonly Employee Employee;
         private readonly int seatingCapacity;
         private readonly int windowCount;
-        private readonly List<string> equipmentList; //Нет 15 варианта, поэтому так
+        private readonly Equipment equipmentList; 
         private readonly DateTime creationDate;
         //Конструктор класса
-        public Classroom(string name, Employee Employee, int seatingCapacity, int windowCount, List<string> equipmentList, DateTime? creationDate = null)
+        public Classroom(string name, Employee Employee, int seatingCapacity, int windowCount, Equipment equipmentList, DateTime? creationDate = null)
         {
             this.name = name;
             this.Employee = Employee;
