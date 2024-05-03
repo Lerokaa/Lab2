@@ -11,7 +11,20 @@ namespace ClassLibrary
     private string name;
     private Employee head;
     private Organization organization;
-    
+        
+    public string Name {
+        get{return name;}
+        set{name=value;}
+    }
+    public Employee Head {
+        get{return head;}
+        set{head=value;}
+    }
+    public Organization Organization {
+        get{return organization;}
+        set{organization=value;}
+    }
+        
     public string Department(string name, Employee head, Organization organization)
     {
         this.name = name;
@@ -23,4 +36,3 @@ namespace ClassLibrary
 
 
     
-}
