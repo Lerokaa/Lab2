@@ -12,21 +12,26 @@ namespace ClassLibrary
     public class Classroom
     {
         private readonly string name;
-        private readonly Employee Employee;
+        private readonly Employee employee;
         private readonly int seatingCapacity;
         private readonly int windowCount;
-        private readonly Equipment equipmentList; 
-        private readonly DateTime creationDate;
+        private readonly List<Equipment> equipments; 
         //Конструктор класса
-        public Classroom(string name, Employee Employee, int seatingCapacity, int windowCount, Equipment equipmentList, DateTime? creationDate = null)
+        public Classroom(string name, Employee Employee, int seatingCapacity, int windowCount)
         {
             this.name = name;
-            this.Employee = Employee;
+            this.employee = Employee;
             this.seatingCapacity = seatingCapacity;
             this.windowCount = windowCount;
-            this.equipmentList = equipmentList;
-            this.creationDate = creationDate ?? DateTime.Now;
+            this.equipments = new List<Equipment>();
+            
         }
+
+        public string Name { get { return name; } }
+        public Employee Employee { get { return Employee; } }
+        public int SeatingCapacity { get {  return seatingCapacity; } }
+        public int WindowCount { get {  return windowCount; } }
+        public List<Equipment> Equipments { get {  return equipments; } }
 
     }
 }
