@@ -28,7 +28,7 @@ namespace ClassLibrary
         }
 
         public string Name { get { return name; } }
-        public Employee Employee { get { return Employee; } }
+        public Employee Employee { get { return employee; } }
         public int SeatingCapacity { get {  return seatingCapacity; } }
         public int WindowCount { get {  return windowCount; } }
         public List<Equipment> Equipments { get {  return equipments; } }
