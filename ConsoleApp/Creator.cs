@@ -14,7 +14,7 @@ namespace ConsoleApp
             Console.WriteLine("Введите название аудитории: ");
             string name = Console.ReadLine();
             
-            Employee employee = CreateEmployee();
+            
             Classroom classroom = DB.Classrooms.FirstOrDefault<Classroom>(cl => cl.Name == name);
             if(classroom == null) 
             {
@@ -37,7 +37,8 @@ namespace ConsoleApp
                     equipmentList.Add(CreateEquipment());
                 }
                 Console.WriteLine("Введите ответственного сотрудника: ");
-                
+                Employee employee = CreateEmployee();
+
                 classroom = new Classroom(name, employee, seatingCapacity, windowCount);
                 foreach (Equipment equipment in equipmentList)
                 {
