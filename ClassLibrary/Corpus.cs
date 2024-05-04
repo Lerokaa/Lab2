@@ -57,7 +57,7 @@ namespace ClassLibrary
         /// <summary>
         /// ссылка на специальность
         /// </summary>
-        public Speciality SSpeciality
+        public Speciality Speciality
         {
             get { return speciality; }
             set { speciality = value; }
@@ -70,7 +70,7 @@ namespace ClassLibrary
             this.Population = population;
             this.YearOfAdmission = yearOfadmission;
             this.ClassroomTeacher = EmpLink;
-            this.SSpeciality = SpecLink;
+            this.Speciality = SpecLink;
         }
     }
 }
