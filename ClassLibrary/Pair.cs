@@ -12,7 +12,7 @@ namespace ClassLibrary
 		private DateTime _timeLessonEnd;
 		private DateTime _timeRestStart;
 		private DateTime _timeRestEnd;
-		private Shift _shift;
+		private WorkShift _shift;
 		public DateTime LessonStart
 		{
 			get { return _timeLessonStart; }
@@ -33,12 +33,12 @@ namespace ClassLibrary
 			get { return _timeRestEnd; }
 			set { value ?? _timeRestEnd = value, throw new Exception(message: "Invalid restEnd") }
 		}
-		public Shift PairShift
+		public WorkShift Shift
 		{
 			get { return _shift; }
 			set { value ?? _shift = value, throw new Exception(message: "Invalid shift") }
 		}
-		public Pair(DateTime timeParaStart, DateTime timeParaEnd, DateTime timeRestStart, DateTime timeRestEnd, Shift shift)
+		public Pair(DateTime timeParaStart, DateTime timeParaEnd, DateTime timeRestStart, DateTime timeRestEnd, WorkShift shift)
 		{
 		    _timeParaStart = timeParaStart;
 		    _timeParaEnd = timeParaEnd;
