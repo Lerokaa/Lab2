@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
- var5
     public class Student
     {
         private string lastName;
@@ -53,9 +52,5 @@ namespace ClassLibrary
             this.group = group;
             this.birthDate = birthDate;
         }
-
-    public class Student
-    {
-    main
     }
 }
