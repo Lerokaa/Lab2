@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    internal class Organization
+    public class Organization
     {
         private string name;
         private string uraddress;
