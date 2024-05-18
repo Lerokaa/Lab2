@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Organization
+    public  class TypeOfActivity
     {
     }
 }
