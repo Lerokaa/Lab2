@@ -8,40 +8,40 @@ namespace ClassLibrary
 {
     internal class Pair
     {
-		private DateTime _timeLessonStart;
-		private DateTime _timeLessonEnd;
+		private DateTime _timePairStart;
+		private DateTime _timePairEnd;
 		private DateTime _timeRestStart;
 		private DateTime _timeRestEnd;
 		private WorkShift _shift;
-		public DateTime LessonStart
+		public DateTime PairStart
 		{
-			get { return _timeLessonStart; }
-			set { value ?? _timeLessonStart = value, throw new Exception(message: "Invalid lessonStart") }
+			get { return _timePairStart; }
+			set { _timePairStart = value; }
 		}
-		public DateTime LessonEnd
+		public DateTime PairEnd
 		{
-			get { return _timeLessonEnd; }
-			set { value ?? _timeLessonEnd = value, throw new Exception(message: "Invalid lessonEnd") }
+			get { return _timePairEnd; }
+			set { _timePairEnd = value; }
 		}
 		public DateTime RestStart
 		{
 			get { return _timeRestStart; }
-			set { value ?? _timeRestStart = value, throw new Exception(message: "Invalid restStart") }
+			set { _timeRestStart = value; }
 		}
 		public DateTime RestEnd
 		{
 			get { return _timeRestEnd; }
-			set { value ?? _timeRestEnd = value, throw new Exception(message: "Invalid restEnd") }
+			set { _timeRestEnd = value; }
 		}
 		public WorkShift Shift
 		{
 			get { return _shift; }
-			set { value ?? _shift = value, throw new Exception(message: "Invalid shift") }
+			set { _shift = value; }
 		}
-		public Pair(DateTime timeParaStart, DateTime timeParaEnd, DateTime timeRestStart, DateTime timeRestEnd, WorkShift shift)
+		public Pair(DateTime timePairStart, DateTime timePairEnd, DateTime timeRestStart, DateTime timeRestEnd, WorkShift shift)
 		{
-		    _timeParaStart = timeParaStart;
-		    _timeParaEnd = timeParaEnd;
+		    _timePairStart = timePairStart;
+		    _timePairEnd = timePairEnd;
 		    _timeRestStart = timeRestStart;
 		    _timeRestEnd = timeRestEnd;
 		    _shift = shift;
