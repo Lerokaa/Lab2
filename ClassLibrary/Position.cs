@@ -6,32 +6,28 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
+    /// <summary>
+    ///https://docs.google.com/document/d/1yBWzXRuxmOQiPQs9TyNx8tNgq6nWF42Sjn-mgT_-5nY/edit 
+    /// <summary>
     public class Position
     {
         // Закрытые поля
-        private string title;
-        private decimal salary;
-        private string department;
+        private readonly string title;
+        private readonly decimal salary;
+        private readonly Department department;
 
         // Конструктор
-        public Position(string title, decimal salary, string department)
+        public Position(string title, decimal salary, Department Department)
         {
-            Title = title;
-            Salary = salary;
-            Department = department;
+            this.title = Title;
+            this.salary = Salary;
+            this.department = Department;
         }
 
         // Методы доступа
       
-        public string Title{
-            get{return title;}
-        }
-         public decimal Salary{
-            get{return salary;}
-        }
-         public string Department{
-            get{return department;}
-        }
+        public string Title{get{return title;}}
+        public decimal Salary{get{return salary;}}
+        public Department Department{get{return department;}}
     }
-
 }
