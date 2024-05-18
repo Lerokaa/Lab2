@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    internal class Pair
+    public class Pair
     {
 		private DateTime _timePairStart;
 		private DateTime _timePairEnd;
