@@ -6,32 +6,36 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class Division
-{
-    private string name;
-    private Employee head;
-    private Organization organization;
-        
-    public string Name {
-        get{return name;}
-        set{name=value;}
-    }
-    public Employee Head {
-        get{return head;}
-        set{head=value;}
-    }
-    public Organization Organization {
-        get{return organization;}
-        set{organization=value;}
-    }
-        
-    public string Department(string name, Employee head, Organization organization)
+    public class Division
     {
-        this.name = name;
-        this.head = head;
-        this.organization = organization;
+        private string name;
+        private Employee head;
+        private Organization organization;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public Employee Head
+        {
+            get { return head; }
+            set { head = value; }
+        }
+        public Organization Organization
+        {
+            get { return organization; }
+            set { organization = value; }
+        }
+
+        public Division(string name, Employee head, Organization organization)
+        {
+            this.name = name;
+            this.head = head;
+            this.organization = organization;
+        }
+
     }
-      
 }
 
 

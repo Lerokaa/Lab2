@@ -9,12 +9,12 @@ namespace ClassLibrary
 {
     internal class Lesson
     {
-        private DateTime datetime;
-        private Discipline discipline;
-        private Employee employee;
-        private Classroom classroom;
-        private Group group;
-        private Pair pair;
+        private readonly DateTime datetime;
+        private readonly Discipline discipline;
+        private readonly Employee employee;
+        private readonly Classroom classroom;
+        private readonly Group group;
+        private readonly Pair pair;
 
         public Lesson(DateTime datetime, Discipline discipline, Employee employee, Classroom classroom, Group group, Pair pair)
         {
@@ -25,5 +25,12 @@ namespace ClassLibrary
             this.group = group;
             this.pair = pair;
         }
+        public DateTime DateTime { get { return datetime; } }
+        public Discipline Discipline { get { return discipline; } }
+        public Employee Employee { get { return employee; } }
+        public Classroom Classroom { get {  return classroom; } }
+        public Group Group { get { return group; } }
+        public Pair Pair { get { return pair; } }
     }
+   
 }
