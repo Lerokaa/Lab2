@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
+ var5
     public class Student
     {
         private string lastName;
@@ -52,5 +53,9 @@ namespace ClassLibrary
             this.group = group;
             this.birthDate = birthDate;
         }
+
+    public class Student
+    {
+    main
     }
 }
