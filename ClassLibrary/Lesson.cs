@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    internal class Lesson
+    public class Lesson
     {
-        private DateTime datetime;
-        private Discipline discipline;
-        private Employee employee;
-        private Classroom classroom;
-        private Group group;
-        private Pair pair;
+        private readonly DateTime datetime;
+        private readonly Discipline discipline;
+        private readonly Employee employee;
+        private readonly Classroom classroom;
+        private readonly Group group;
+        private readonly Pair pair;
+        private readonly TypeOfActivity typeOfActivity;
 
-        public Lesson(DateTime datetime, Discipline discipline, Employee employee, Classroom classroom, Group group, Pair pair)
+        public Lesson(DateTime datetime, Discipline discipline, Employee employee, Classroom classroom, Group group, Pair pair, TypeOfActivity typeOfActivity)
         {
             this.datetime = datetime;
             this.discipline = discipline;
@@ -24,6 +25,16 @@ namespace ClassLibrary
             this.classroom = classroom;
             this.group = group;
             this.pair = pair;
+            this.typeOfActivity = typeOfActivity;
         }
+        public DateTime DateTime { get { return datetime; } }
+        public Discipline Discipline { get { return discipline; } }
+        public Employee Employee { get { return employee; } }
+        public Classroom Classroom { get {  return classroom; } }
+        public Group Group { get { return group; } }
+        public Pair Pair { get { return pair; } }
+
+        public TypeOfActivity TypeOfActivity { get { return typeOfActivity; } }
     }
+   
 }
