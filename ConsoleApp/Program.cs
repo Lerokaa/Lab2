@@ -26,8 +26,8 @@ namespace ConsoleApp
                         {
                             foreach (Classroom classroom in DB.Classrooms)
                                 Printer.PrintClassroom(classroom);
-                            foreach (Student student in DB.Student);
-                                Printer.PrintStudent(student);
+                            
+                                
                             break;
                         }
                     case 1:

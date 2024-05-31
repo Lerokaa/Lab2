@@ -24,34 +24,20 @@ namespace ConsoleApp
 
             //Вы должны оганизовать получение ключевых данных от пользователя
             // для поиска существующей сущности в БД
-            Console.WriteLine("Введите начало пары (в формате чч:мм):");
-            string pairStart = Console.ReadLine();
-
-            while (!ValidateTimeFormat(pairStart))
+            Console.WriteLine("Введите дату (в формате гггг-мм-дд):");
+            string dateInput = Console.ReadLine();
+            DateTime date;
+            while (!DateTime.TryParse(dateInput, out date))
             {
-                Console.WriteLine("Введенное время не соответствует формату чч:мм. Повторите ввод:");
-                pairStart = Console.ReadLine();
+                Console.WriteLine("Неверный формат даты. Повторите ввод (в формате гггг-мм-дд):");
+                dateInput = Console.ReadLine();
             }
 
-            Console.WriteLine("Введите конец пары (в формате чч:мм):");
-            string pairEnd = Console.ReadLine();
-
-            while (!ValidateTimeFormat(pairEnd))
-            {
-                Console.WriteLine("Введенное время не соответствует формату чч:мм. Повторите ввод:");
-                pairEnd = Console.ReadLine();
-            }
-
-            // После сбора ключевых данных вы обращаетесь в БД ища существующий обект
-            Lesson lesson = DB.lessons.FirstOrDefault(l => discipline == l.Discipline && employee == l.Employee && classroom == l.Classroom && pair == l.Pair && group == l.Group && typeOfActivity == l.TypeOfActivity);
-            
-            // Если этого обекта нет в БД, вы должны его создать
             if (lesson == null)
             {
-                Console.WriteLine("Введите дату:");
-                string date = Console.ReadLine();
-                lesson = new Lesson(DateTime.Parse(date), discipline, employee, classroom, group, pair, typeOfActivity);
+                lesson = new Lesson(date, discipline, employee, classroom, group, pair, typeOfActivity);
                 DB.lessons.Add(lesson);
+                // Здесь вызовите метод для сохранения изменений в базе данных, если он есть
                 Console.WriteLine("Занятие успешно создано.");
             }
 
@@ -89,7 +75,7 @@ namespace ConsoleApp
         }
         public static Student CreateStudent()
         {
-            lastname = CreateLastname();
+            Lastname lastname = CreateLastname();
             Firstname firstname = CreateFirstname();
             Patronymic patronymic = CreatePatronymic();
             ClassLibrary.Group group = CreateGroup();

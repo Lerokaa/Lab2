@@ -11,7 +11,7 @@ namespace ClassLibrary
         private readonly string lastname;
         private readonly string firstname;
         private readonly string patronymic;
-        private readonly string group;
+        private readonly Group group;
         private readonly DateTime birthDate;
         //Конструктор класса
         public Student(string lastname, string firstname, string patronymic, string group, DateTime birthDate)
@@ -27,7 +27,7 @@ namespace ClassLibrary
         public string lastname { get { return lastname; } }
         public string firstname { get { return firstname; } }
         public string patronymic { get { return patronymic; } }
-        public string group { get { return group; } }
+        public Group group { get { return group; } }
         public DateTime birthDate { get { return birthDate; } }
 
     }
