@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
+    //https://docs.google.com/document/d/1KZXfKJussGflgWnWylGbFrwmdcn3liYKIsgmtxB1mN0/edit
+
     public class Lesson
     {
         private readonly DateTime datetime;

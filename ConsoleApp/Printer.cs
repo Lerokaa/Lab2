@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ConsoleApp
@@ -12,11 +13,16 @@ namespace ConsoleApp
         public static void PrintLesson(Lesson lesson)
         {
             PrintDiscipline(lesson.Discipline);
+            PrintEmployee(lesson.Employee);
+            PrintClassroom(lesson.Classroom);
+            PrintGroup(lesson.Group);
+            PrintPair(lesson.Pair);
+            PrintTypeOfActivity(lesson.TypeOfActivity);
         }
 
         public static void PrintDiscipline(Discipline discipline)
         {
-
+            Console.WriteLine("Дисциплина: {0}", discipline);
         }
         public static void PrintClassroom(Classroom classroom)
         {
@@ -36,6 +42,18 @@ namespace ConsoleApp
         public static void PrintEquipment(Equipment equipment)
         {
             Console.WriteLine("Оборудование: {0}", equipment);
+        }
+        public static void PrintGroup(ClassLibrary.Group group)
+        {
+            Console.WriteLine("Группа: {0}", group);
+        }
+        public static void PrintPair(Pair pair)
+        {
+            Console.WriteLine("Пара: {0}", pair);
+        }
+        public static void PrintTypeOfActivity(TypeOfActivity typeOfActivity)
+        {
+            Console.WriteLine("Тип активности: {0}", typeOfActivity);
         }
     }
 }
