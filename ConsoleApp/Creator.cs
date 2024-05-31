@@ -95,5 +95,23 @@ namespace ConsoleApp
             string pattern = @"^(2[0-3]|[01][0-9]):[0-5][0-9]$";
             return Regex.IsMatch(time, pattern);
         }
+
+        public static Speciality CreateSpeciality()
+        {
+            
+            Console.WriteLine("Введите полное название специальности:");
+            string SpecialityName = Console.ReadLine();
+            
+            Speciality speciality = DB.speciality.FirstOrDefault(s => SpecialityName == s.SpecialityName);
+            if (speciality == null)
+            {
+                Console.WriteLine("Введите сокращение названия специальности:");
+                string ReductionName = Console.ReadLine();
+                speciality = new Speciality(SpecialityName, ReductionName);
+                DB.speciality.Add(speciality);
+                Console.WriteLine("Специальность успешно создана.");
+            }
+            return speciality;
+        }
     }
 }

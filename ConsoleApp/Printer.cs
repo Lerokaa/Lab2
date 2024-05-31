@@ -28,5 +28,11 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+        public static void PrintSpeciality(Speciality speciality)
+        {
+            Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
+            Console.WriteLine($"Сокращенное название: {speciality.ReductionName}");
+
+        }
     }
 }
