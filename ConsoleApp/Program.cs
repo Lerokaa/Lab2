@@ -14,6 +14,7 @@ namespace ConsoleApp
             while (true)
             {
                 Console.WriteLine("0.Вывести базу данных");
+                Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
                 int menu;
                 while (!int.TryParse(Console.ReadLine(), out menu) || menu < 0)
@@ -28,11 +29,11 @@ namespace ConsoleApp
                         }
                     case 1:
                         {
+                            Creator.CreateLesson();
                             break;
                         }
                     case 2:
                         {
-                            Creator.CreateClassroom();
                             break;
                         }
                 }
