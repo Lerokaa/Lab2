@@ -87,10 +87,17 @@ namespace ConsoleApp
         {
             return null;
         }
-        public static lastname CreateStudent()
+        public static Student CreateStudent()
         {
-            last
+            lastname = CreateLastname();
+            Firstname firstname = CreateFirstname();
+            Patronymic patronymic = CreatePatronymic();
+            ClassLibrary.Group group = CreateGroup();
+            DateTime.birthDate birthdate = CreateBirthdate();
+
+
         }
+        
 
 
 

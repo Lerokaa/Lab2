@@ -28,5 +28,13 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+        public static void PrintStudent(Student student)
+        {
+            Console.WriteLine("Фамилия: {0}", student.firstname);
+            Console.WriteLine("Имя: {0}", student.lastname);
+            Console.WriteLine("Отчество: {0}", student.patronymic);
+            Console.WriteLine("Группа: {0}", student.group);
+            Console.WriteLine("День рождения: {0}", student.birthDate);
+        }
     }
 }
