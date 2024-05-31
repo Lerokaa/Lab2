@@ -28,5 +28,28 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+
+
+        public static void PrintGroup(Group group)
+        {
+            Console.WriteLine("Название группы: {0}", group.Name);
+            Console.WriteLine("Сокращение: {0}", group.ShortName) ;
+            Console.WriteLine("Численность: {0}", group.Population);
+            Console.WriteLine("Год поступления: {0}", group.YearOfAdmission);
+            PrintEmployee(group.Employee);
+            PrintSpeciality(group.Speciality);
+        }
+        public static void PrintEmployee(Employee employee)
+        {
+            Console.WriteLine("Ответственный сотрудник: {0}", employee);
+        }
+        public static void PrintEquipment(Equipment equipment)
+        {
+            Console.WriteLine("Оборудование: {0}", equipment);
+        }
+        public static void PrintSpeciality(Speciality speciality)
+        {
+            Console.WriteLine(" Специальность: {0}", speciality);
+        }
     }
 }

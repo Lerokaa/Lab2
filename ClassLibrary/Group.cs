@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    internal class Group
+    
+    public class Group
     {
+        /// <summary>
+        /// https://docs.google.com/document/d/1qZEaADy71rJCOuNSTpyhh-f-NhSL2a6DCm88EgFO20o/edit
+        /// </summary>
         private string name;
         private string shortname;
         private int population;
@@ -44,7 +48,7 @@ namespace ClassLibrary
         public int YearOfAdmission
         {
             get { return yearOfadmission; }
-            set { yearOfadmission = value};
+            set { yearOfadmission = value; }
         }
         /// <summary>
         /// классный руководитель
@@ -62,7 +66,6 @@ namespace ClassLibrary
             get { return speciality; }
             set { speciality = value; }
         }
-
         public Group(string name, string shortname, int population, int yearOfadmission, Employee EmpLink, Speciality SpecLink)
         {
             this.Name = name;
