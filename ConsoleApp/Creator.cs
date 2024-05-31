@@ -87,6 +87,10 @@ namespace ConsoleApp
         {
             return null;
         }
+        public static lastname CreateStudent()
+        {
+            last
+        }
 
 
 

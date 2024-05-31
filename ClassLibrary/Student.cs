@@ -8,49 +8,28 @@ namespace ClassLibrary
 {
     public class Student
     {
-        private string lastName;
-        private string firstName;
-        private string patronymic;
-        private string group;
-        private DateTime birthDate;
-
-        public string LastName
+        private readonly string lastname;
+        private readonly string firstname;
+        private readonly string patronymic;
+        private readonly string group;
+        private readonly DateTime birthDate;
+        //Конструктор класса
+        public Student(string lastname, string firstname, string patronymic, string group, DateTime birthDate)
         {
-            get { return lastName; }
-            set { lastName = value; }
-        }
-
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-
-        public string Patronymic
-        {
-            get { return patronymic; }
-            set { patronymic = value; }
-        }
-
-        public string Group
-        {
-            get { return group; }
-            set { group = value; }
-        }
-
-        public DateTime BirthDate
-        {
-            get { return birthDate; }
-            set { birthDate = value; }
-        }
-
-        public Student(string lastName, string firstName, string patronymic, string group, DateTime birthDate)
-        {
-            this.lastName = lastName;
-            this.firstName = firstName;
+            this.lastname = lastname;
+            this.firstname = firstname;
             this.patronymic = patronymic;
             this.group = group;
             this.birthDate = birthDate;
+
         }
+
+        public string lastname { get { return lastname; } }
+        public string firstname { get { return firstname; } }
+        public string patronymic { get { return patronymic; } }
+        public string group { get { return group; } }
+        public DateTime birthDate { get { return birthDate; } }
+
     }
+    
 }
