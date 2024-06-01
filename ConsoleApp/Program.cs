@@ -17,7 +17,7 @@ namespace ConsoleApp
                 Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
                 Console.WriteLine("3.Создать дисциплину");
-                Console.WriteLine("9.Создать сотрудника")
+                Console.WriteLine("9.Создать сотрудника");
                Console.WriteLine("11.Создать подразделение");
                 Console.WriteLine("6.Создать специальность.");
                 Console.WriteLine("10.Создать должность");

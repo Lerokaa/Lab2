@@ -133,14 +133,6 @@ namespace ConsoleApp
 
             return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
         }
-    {
-        return null;
-    }
-    public static Employee CreateEmployee()
-    {
-        return null;
-    }
-
 
         public static Discipline CreateDiscipline()
         {
@@ -157,8 +149,6 @@ namespace ConsoleApp
             }
             return discipline;
         }
-
-
 
         private static bool ValidateTimeFormat(string time)
         {
@@ -207,14 +197,10 @@ namespace ConsoleApp
                 Console.WriteLine("Специальность успешно создана.");
             }
             return speciality;
-
         }
+
         public static Position CreatePosition()
         {
-
-            
-
-
             Console.WriteLine("Введите название должности:");
             string title = Console.ReadLine();
 
@@ -234,8 +220,6 @@ namespace ConsoleApp
                 Console.WriteLine("Должность создана");
             }
             return position;
-
-
         }
     }
 }
