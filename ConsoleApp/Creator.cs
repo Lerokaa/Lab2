@@ -80,7 +80,18 @@ namespace ConsoleApp
 
         private static Employee CreateEmployee()
         {
-            return null;
+            Console.WriteLine("Введите фамилию сотрудника:");
+            string lastName = Console.ReadLine();
+
+            Console.WriteLine("Введите имя сотрудника:");
+            string firstName = Console.ReadLine();
+
+
+            Console.WriteLine("Введите отчество сотрудника:");
+
+            string patronypicName = Console.ReadLine();
+
+            return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
         }
 
         private static Discipline CreateDiscipline()
