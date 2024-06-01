@@ -63,10 +63,6 @@ namespace ConsoleApp
             return null;
         }
 
-        private static ClassLibrary.Group CreateGroup()
-        {
-            return null;
-        }
 
         public static Pair CreatePair()
         {
@@ -75,6 +71,12 @@ namespace ConsoleApp
             while (!TimeSpan.TryParse(Console.ReadLine(), out pairstart))
             {
                 Console.Write("Неправильный формат! Введите время начала пары: ");
+            }
+
+            Pair db_pair = DB.pairs.FirstOrDefault(pa => pa.PairStart == pairstart);
+            if (db_pair != null)
+            {
+                return db_pair;
             }
 
             TimeSpan pairend;
@@ -116,6 +118,7 @@ namespace ConsoleApp
 
             Classroom classroom = DB.Classrooms.FirstOrDefault(cl => cl.Name == name);
             if (classroom == null)
+
             {
                 Console.WriteLine("Введите количество мест?");
                 int seatingCapacity;
@@ -171,12 +174,6 @@ namespace ConsoleApp
             return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
         }
 
-        public static WorkShift CreateWorkShift()
-        {
-            return null;
-        }
-
-
 
         public static Discipline CreateDiscipline()
         {
@@ -206,6 +203,7 @@ namespace ConsoleApp
                 name = Console.ReadLine();
             }
 
+
             WorkShift db_shift = DB.WorkShifts.FirstOrDefault(ws => ws.Name == name);
             if (db_shift != null)
             {
@@ -217,6 +215,7 @@ namespace ConsoleApp
 
           
             WorkShift workShift = new WorkShift(name);
+
 
             
             DB.WorkShifts.Add(workShift);
@@ -251,12 +250,48 @@ namespace ConsoleApp
             }
 
             return division;
+        
         }
 
         private static Organization CreateOrganization()
         {
             return null;
         }
+
+        public static ClassLibrary.Group CreateGroup()
+        {
+            Console.WriteLine("Введите название группы: ");
+            string name = Console.ReadLine();
+            ClassLibrary.Group group = DB.Groups.FirstOrDefault(gr => gr.Name == name);
+            if (group == null)
+            {
+                Console.WriteLine("Введите сокращение: ");
+                string shortname = Console.ReadLine();
+
+                Console.WriteLine("Введите численность: ");
+                int population;
+                while (!int.TryParse(Console.ReadLine(), out population) || population < 0)
+                    Console.WriteLine("Нужно ввести целое число =>0");
+
+                Console.WriteLine("Введите год поступленя:");
+                int yearOfadmission;
+                while (!int.TryParse(Console.ReadLine(), out yearOfadmission) || yearOfadmission < 1900 || yearOfadmission > 2025)
+                    Console.WriteLine("Нужно ввести год");
+
+                Console.WriteLine("Введите спецаильность: ");
+                Speciality speciality = CreateSpeciality();
+
+                Console.WriteLine("Введите классного руководителя: ");
+                Employee classroomteacher = CreateEmployee();
+
+
+                group = new ClassLibrary.Group(name, shortname, population, yearOfadmission, classroomteacher, speciality);
+                DB.Groups.Add(group);
+
+            }
+            return group;
+        }
+
 
         public static Speciality CreateSpeciality()
         {
@@ -298,5 +333,7 @@ namespace ConsoleApp
             }
             return position;
         }
+      
+        
     }
 }

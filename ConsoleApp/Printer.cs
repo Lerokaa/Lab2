@@ -23,18 +23,35 @@ namespace ConsoleApp
         }
         public static void PrintEmployee(Employee employee)
         {
-            Console.WriteLine("Ответственный сотрудник: {0}", employee);
+            Console.WriteLine("Фамилия: {0}", employee.LastName);
+            Console.WriteLine("Имя: {0}", employee.FirstName);
+            Console.WriteLine("Отчество: {0}", employee.PatronymicName);
+            PrintSpeciality(employee.Speciality);
         }
         public static void PrintEquipment(Equipment equipment)
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
 
+
+
+        public static void PrintGroup(ClassLibrary.Group group)
+        {
+            Console.WriteLine("Название группы: {0}", group.Name);
+            Console.WriteLine("Сокращение: {0}", group.ShortName) ;
+            Console.WriteLine("Численность: {0}", group.Population);
+            Console.WriteLine("Год поступления: {0}", group.YearOfAdmission);
+            PrintEmployee(group.ClassroomTeacher);
+            PrintSpeciality(group.Speciality);
+        }
+
+
         public static void PrintSpeciality(Speciality speciality)
         {
             Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
             Console.WriteLine($"Сокращенное название: {speciality.ReductionName}");
         }
+
         public static void PrintDivision(Division division)
 
         {
@@ -66,10 +83,7 @@ namespace ConsoleApp
             Console.WriteLine("Название дисциплины: {0}", discipline.Name);
             Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
         }
-        public static void PrintGroup(ClassLibrary.Group group)
-        {
-            Console.WriteLine("Группа: {0}", group);
-        }
+
         public static void PrintPair(Pair pair)
         {
             Console.WriteLine("Время начала пары: {0}", pair.PairStart.ToString());
@@ -93,10 +107,6 @@ namespace ConsoleApp
             Console.WriteLine("Оклад: {0}", position.Salary);
             PrintDivision(position.Division);
         }
-
-
-        
-      
 
 
     }
