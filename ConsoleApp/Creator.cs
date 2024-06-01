@@ -167,7 +167,7 @@ namespace ConsoleApp
             Console.WriteLine("Введите отчество сотрудника:");
             string patronypicName = Console.ReadLine();
 
-            Employee employee = DB.Employees.FirstOrDefault(ln => ln.LastName == lastName && ln.FirstName == firstName && ln.PatronypicName == patronypicName);
+            Employee employee = DB.Employees.FirstOrDefault(ln => ln.LastName == lastName && ln.FirstName == firstName && ln.PatronymicName == patronypicName);
             if (employee == null)
             {
                 employee = new Employee(lastName, firstName, patronypicName, CreatePosition());
