@@ -16,6 +16,7 @@ namespace ConsoleApp
                 Console.WriteLine("0.Вывести базу данных");
                 Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
+                Console.WriteLine("11.Создать подразделение");
                 int menu;
                 while (!int.TryParse(Console.ReadLine(), out menu) || menu < 0)
                     Console.WriteLine("Нужно ввести целое число =>0");
@@ -34,6 +35,11 @@ namespace ConsoleApp
                         }
                     case 2:
                         {
+                            break;
+                        }
+                    case 11:
+                        {
+                            Creator.CreateDivision();
                             break;
                         }
                 }

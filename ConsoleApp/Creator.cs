@@ -44,7 +44,7 @@ namespace ConsoleApp
 
             // После сбора ключевых данных вы обращаетесь в БД ища существующий обект
             Lesson lesson = DB.lessons.FirstOrDefault(l => discipline == l.Discipline && employee == l.Employee && classroom == l.Classroom && pair == l.Pair && group == l.Group && typeOfActivity == l.TypeOfActivity);
-            
+
             // Если этого обекта нет в БД, вы должны его создать
             if (lesson == null)
             {
@@ -95,5 +95,30 @@ namespace ConsoleApp
             string pattern = @"^(2[0-3]|[01][0-9]):[0-5][0-9]$";
             return Regex.IsMatch(time, pattern);
         }
+        public static Division CreateDivision()
+        {
+            Employee head = CreateEmployee();
+            Organization organization = CreateOrganization();
+
+            Console.WriteLine("Введите название организации:");
+            string name = Console.ReadLine();
+
+            Division division = DB.Division.FirstOrDefault(l => head == l.Head && organization == l.Organization);
+
+            if (division == null)
+            {
+                division = new Division(name, head, organization);
+                DB.Division.Add(division);
+                Console.WriteLine("Подразделение успешно создано.");
+            }
+
+            return division;
+        }
+
+        private static Organization CreateOrganization()
+        {
+            return null;
+        }
+
     }
 }

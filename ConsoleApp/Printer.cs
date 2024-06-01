@@ -9,7 +9,7 @@ namespace ConsoleApp
 {
     internal static class Printer
     {
-        public static void PrintClassroom(Classroom classroom) 
+        public static void PrintClassroom(Classroom classroom)
         {
             Console.WriteLine("Название аудитории: {0}", classroom.Name);
             PrintEmployee(classroom.Employee);
@@ -27,6 +27,20 @@ namespace ConsoleApp
         public static void PrintEquipment(Equipment equipment)
         {
             Console.WriteLine("Оборудование: {0}", equipment);
+        }
+        public static void PrintDivision(Division division)
+        {
+            Console.WriteLine("Название подразделения: {0}", division.Name);
+            PrintHead(division.Head);
+            PrintOrganization(division.Organization);
+        }
+        public static void PrintHead(Employee head)
+        {
+            Console.WriteLine("Руководитель: {0}", head);
+        }
+        public static void PrintOrganization(Organization organization)
+        {
+            Console.WriteLine("Организация: {0}", organization);
         }
     }
 }
