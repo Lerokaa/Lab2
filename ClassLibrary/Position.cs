@@ -17,11 +17,11 @@ namespace ClassLibrary
         private readonly Division division;
 
         // Конструктор
-        public Position(string title, decimal salary, Division Division)
+        public Position(string title, decimal salary, Division division)
         {
-            this.title = Title;
-            this.salary = Salary;
-            this.division = Division;
+            this.title = title;
+            this.salary = salary;
+            this.division = division;
         }
 
         // Методы доступа
