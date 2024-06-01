@@ -51,7 +51,7 @@ namespace ConsoleApp
             Console.WriteLine("Организация: {0}", organization);
 
         }
-              public static void PrintLesson(Lesson lesson)
+        public static void PrintLesson(Lesson lesson)
         {
             Console.WriteLine(lesson.DateTime);
             PrintDiscipline(lesson.Discipline);
@@ -72,7 +72,11 @@ namespace ConsoleApp
         }
         public static void PrintPair(Pair pair)
         {
-            Console.WriteLine("Пара: {0}", pair);
+            Console.WriteLine("Время начала пары: {0}", pair.PairStart.ToString());
+            Console.WriteLine("Время конца пары: {0}", pair.PairEnd.ToString());
+            Console.WriteLine("Времы начала перерыва: {0}", pair.RestStart.ToString() ?? "Перерыва нет");
+            Console.WriteLine("Время конца перерыва: {0}", pair.RestEnd.ToString() ?? "Перерыва нет");
+            PrintWorkShift(pair.WorkShift);
         }
         public static void PrintWorkShift(WorkShift workShift)
         {
@@ -83,13 +87,20 @@ namespace ConsoleApp
             Console.WriteLine("Тип активности: {0}", typeOfActivity);
         }
 
-
         public static void PrintPosition(Position position)
         {
             Console.WriteLine("Должность: {0}", position.Title);
             Console.WriteLine("Оклад: {0}", position.Salary);
             PrintDivision(position.Division);
         }
+
+
+        
+        public static void PrintWorkShift(WorkShift workShift)
+        {
+            Console.WriteLine("jfkflf: {0}", workShift);
+        }
+
 
     }
 }

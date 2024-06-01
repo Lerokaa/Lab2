@@ -24,7 +24,7 @@ namespace ClassLibrary
         }
         public Employee Head
         {
-            get { return Head; }
+            get { return head; }
 
         }
         public Organization Organization
