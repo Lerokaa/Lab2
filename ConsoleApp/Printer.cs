@@ -29,7 +29,14 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+
+        public static void PrintSpeciality(Speciality speciality)
+        {
+            Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
+            Console.WriteLine($"Сокращенное название: {speciality.ReductionName}");
+
         public static void PrintDivision(Division division)
+
         {
             Console.WriteLine("Название подразделения: {0}", division.Name);
             PrintHead(division.Head);

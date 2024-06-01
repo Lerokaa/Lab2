@@ -73,15 +73,71 @@ namespace ConsoleApp
             return null;
         }
 
-        private static Classroom CreateClassroom()
-        {
-            return null;
-        }
+        public static Classroom CreateClassroom()
+{
+Console.WriteLine("Введите название аудитории: ");
+string name = Console.ReadLine();
 
-        private static Employee CreateEmployee()
+        Classroom classroom = DB.Classrooms.FirstOrDefault<Classroom>(cl => cl.Name == name);
+        if(classroom == null) 
         {
-            return null;
+
+            Console.WriteLine("Введите фамилию сотрудника:");
+            string lastName = Console.ReadLine();
+
+            Console.WriteLine("Введите имя сотрудника:");
+            string firstName = Console.ReadLine();
+
+
+            Console.WriteLine("Введите отчество сотрудника:");
+
+            string patronypicName = Console.ReadLine();
+
+            return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
+
+            Console.WriteLine("Введите количество мест?");
+            int seatingCapacity;
+            while (!int.TryParse(Console.ReadLine(), out seatingCapacity) || seatingCapacity < 0)
+                Console.WriteLine("Нужно ввести целое число =>0");
+            Console.WriteLine("Введите количество окон?");
+            int windowCount;
+            while (!int.TryParse(Console.ReadLine(), out windowCount) || windowCount < 0)
+                Console.WriteLine("Нужно ввести целое число =>0");
+            Console.WriteLine("Введите количество оборудования:");
+            int equipmentCount;
+            while (!int.TryParse(Console.ReadLine(), out equipmentCount) || equipmentCount < 0)
+                Console.WriteLine("Нужно ввести целое число =>0");
+            List<Equipment> equipmentList = new List<Equipment>();
+            for (int i = 0; i < equipmentCount; i++)
+            {
+                Console.WriteLine("Создайте оборудование:");
+                equipmentList.Add(CreateEquipment());
+            }
+            Console.WriteLine("Введите ответственного сотрудника: ");
+            Employee employee = CreateEmployee();
+
+            classroom = new Classroom(name, employee, seatingCapacity, windowCount);
+            foreach (Equipment equipment in equipmentList)
+            {
+                classroom.Equipments.Add(equipment);
+            }
+            DB.Classrooms.Add(classroom);
+            
+
         }
+        return classroom;
+
+    }
+
+    public static Equipment CreateEquipment()
+    {
+        return null;
+    }
+    public static Employee CreateEmployee()
+    {
+        return null;
+    }
+
 
         public static Discipline CreateDiscipline()
         {
@@ -131,5 +187,22 @@ namespace ConsoleApp
             return null;
         }
 
+        public static Speciality CreateSpeciality()
+        {
+            
+            Console.WriteLine("Введите полное название специальности:");
+            string SpecialityName = Console.ReadLine();
+            
+            Speciality speciality = DB.speciality.FirstOrDefault(s => SpecialityName == s.SpecialityName);
+            if (speciality == null)
+            {
+                Console.WriteLine("Введите сокращение названия специальности:");
+                string ReductionName = Console.ReadLine();
+                speciality = new Speciality(SpecialityName, ReductionName);
+                DB.speciality.Add(speciality);
+                Console.WriteLine("Специальность успешно создана.");
+            }
+            return speciality;
+        }
     }
 }
