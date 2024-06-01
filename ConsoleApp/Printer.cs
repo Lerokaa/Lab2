@@ -23,7 +23,10 @@ namespace ConsoleApp
         }
         public static void PrintEmployee(Employee employee)
         {
-            Console.WriteLine("Ответственный сотрудник: {0}", employee);
+            Console.WriteLine("Фамилия: {0}", employee.LastName);
+            Console.WriteLine("Имя: {0}", employee.FirstName);
+            Console.WriteLine("Отчество: {0}", employee.PatronymicName);
+            PrintSpeciality(employee.Speciality);
         }
         public static void PrintEquipment(Equipment equipment)
         {
@@ -78,6 +81,11 @@ namespace ConsoleApp
             Console.WriteLine("Времы начала перерыва: {0}", pair.RestStart.ToString() ?? "Перерыва нет");
             Console.WriteLine("Время конца перерыва: {0}", pair.RestEnd.ToString() ?? "Перерыва нет");
             PrintWorkShift(pair.WorkShift);
+        }
+        public static void PrintWorkShift(WorkShift workShift)
+        {
+            Console.WriteLine("Название смены: {0}", workShift.Name);
+            Console.WriteLine("Дата смены: {0}", workShift.Date);
         }
         public static void PrintTypeOfActivity(TypeOfActivity typeOfActivity)
         {

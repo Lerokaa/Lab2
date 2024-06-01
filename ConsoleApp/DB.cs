@@ -18,6 +18,6 @@ namespace ConsoleApp
         public static List<Position> Position = new List<Position>();
 
         public static List<Pair> pairs = new List<Pair>();
-
+        public static List<WorkShift> WorkShifts = new List<WorkShift>();
     }
 }
