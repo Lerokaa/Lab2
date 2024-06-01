@@ -14,20 +14,20 @@ namespace ClassLibrary
         // Закрытые поля
         private readonly string title;
         private readonly decimal salary;
-        private readonly Department department;
+        private readonly Division division;
 
         // Конструктор
-        public Position(string title, decimal salary, Department Department)
+        public Position(string title, decimal salary, Division Division)
         {
             this.title = Title;
             this.salary = Salary;
-            this.department = Department;
+            this.division = Division;
         }
 
         // Методы доступа
-      
-        public string Title{get{return title;}}
-        public decimal Salary{get{return salary;}}
-        public Department Department{get{return department;}}
+
+        public string Title { get { return title; } }
+        public decimal Salary { get { return salary; } }
+        public Division Division { get { return division; } }
     }
 }
