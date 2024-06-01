@@ -61,6 +61,11 @@ namespace ConsoleApp
             PrintPair(lesson.Pair);
             PrintTypeOfActivity(lesson.TypeOfActivity);
         }
+        public static void PrintDiscipline(Discipline discipline)
+        {
+            Console.WriteLine("Название дисциплины: {0}", discipline.Name);
+            Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
+        }
 
     }
 }
