@@ -73,63 +73,49 @@ namespace ConsoleApp
             return null;
         }
 
+
         public static Classroom CreateClassroom()
-{
-Console.WriteLine("Введите название аудитории: ");
-string name = Console.ReadLine();
-
-        Classroom classroom = DB.Classrooms.FirstOrDefault<Classroom>(cl => cl.Name == name);
-        if(classroom == null) 
         {
+            Console.WriteLine("Введите название аудитории: ");
+            string name = Console.ReadLine();
 
-            Console.WriteLine("Введите фамилию сотрудника:");
-            string lastName = Console.ReadLine();
-
-            Console.WriteLine("Введите имя сотрудника:");
-            string firstName = Console.ReadLine();
-
-
-            Console.WriteLine("Введите отчество сотрудника:");
-
-            string patronypicName = Console.ReadLine();
-
-            return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
-
-            Console.WriteLine("Введите количество мест?");
-            int seatingCapacity;
-            while (!int.TryParse(Console.ReadLine(), out seatingCapacity) || seatingCapacity < 0)
-                Console.WriteLine("Нужно ввести целое число =>0");
-            Console.WriteLine("Введите количество окон?");
-            int windowCount;
-            while (!int.TryParse(Console.ReadLine(), out windowCount) || windowCount < 0)
-                Console.WriteLine("Нужно ввести целое число =>0");
-            Console.WriteLine("Введите количество оборудования:");
-            int equipmentCount;
-            while (!int.TryParse(Console.ReadLine(), out equipmentCount) || equipmentCount < 0)
-                Console.WriteLine("Нужно ввести целое число =>0");
-            List<Equipment> equipmentList = new List<Equipment>();
-            for (int i = 0; i < equipmentCount; i++)
+            Classroom classroom = DB.Classrooms.FirstOrDefault(cl => cl.Name == name);
+            if (classroom == null)
             {
-                Console.WriteLine("Создайте оборудование:");
-                equipmentList.Add(CreateEquipment());
-            }
-            Console.WriteLine("Введите ответственного сотрудника: ");
-            Employee employee = CreateEmployee();
+                Console.WriteLine("Введите количество мест?");
+                int seatingCapacity;
+                while (!int.TryParse(Console.ReadLine(), out seatingCapacity) || seatingCapacity < 0)
+                    Console.WriteLine("Нужно ввести целое число =>0");
+                Console.WriteLine("Введите количество окон?");
+                int windowCount;
+                while (!int.TryParse(Console.ReadLine(), out windowCount) || windowCount < 0)
+                    Console.WriteLine("Нужно ввести целое число =>0");
+                Console.WriteLine("Введите количество оборудования:");
+                int equipmentCount;
+                while (!int.TryParse(Console.ReadLine(), out equipmentCount) || equipmentCount < 0)
+                    Console.WriteLine("Нужно ввести целое число =>0");
+                List<Equipment> equipmentList = new List<Equipment>();
+                for (int i = 0; i < equipmentCount; i++)
+                {
+                    Console.WriteLine("Создайте оборудование:");
+                    equipmentList.Add(CreateEquipment());
+                }
+                Console.WriteLine("Введите ответственного сотрудника: ");
+                Employee employee = CreateEmployee();
 
-            classroom = new Classroom(name, employee, seatingCapacity, windowCount);
-            foreach (Equipment equipment in equipmentList)
-            {
-                classroom.Equipments.Add(equipment);
+                classroom = new Classroom(name, employee, seatingCapacity, windowCount);
+                foreach (Equipment equipment in equipmentList)
+                {
+                    classroom.Equipments.Add(equipment);
+                }
+                DB.Classrooms.Add(classroom);
+
             }
-            DB.Classrooms.Add(classroom);
-            
+            return classroom;
 
         }
-        return classroom;
 
-    }
-
-    public static Equipment CreateEquipment()
+        public static Equipment CreateEquipment()
     {
         return null;
     }
