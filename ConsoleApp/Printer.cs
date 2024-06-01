@@ -47,6 +47,13 @@ namespace ConsoleApp
             Console.WriteLine("Времы начала перерыва: {0}", pair.RestStart ?? "Перерыва нет");
             Console.WriteLine("Время конца перерыва: {0}", pair.RestEnd ?? "Перерыва нет");
             PrintWorkShift(pair.Shift);
+        }
+        public static void PrintSpeciality(Speciality speciality)
+        {
+            Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
+            Console.WriteLine($"Сокращенное название: {speciality.ReductionName}");
+
+        }
         public static void PrintGroup(ClassLibrary.Group group)
         {
             Console.WriteLine("Группа: {0}", group);
