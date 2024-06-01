@@ -35,7 +35,7 @@ namespace ConsoleApp
 
 
 
-        public static void PrintGroup(Group group)
+        public static void PrintGroup(ClassLibrary.Group group)
         {
             Console.WriteLine("Название группы: {0}", group.Name);
             Console.WriteLine("Сокращение: {0}", group.ShortName) ;

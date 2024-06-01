@@ -63,10 +63,6 @@ namespace ConsoleApp
             return null;
         }
 
-        private static ClassLibrary.Group CreateGroup()
-        {
-            return null;
-        }
 
         public static Pair CreatePair()
         {
@@ -266,11 +262,11 @@ namespace ConsoleApp
             return null;
         }
 
-        public static Group CreateGroup()
+        public static ClassLibrary.Group CreateGroup()
         {
             Console.WriteLine("Введите название группы: ");
             string name = Console.ReadLine();
-            Group group = DB.Groups.FirstOrDefault<Group>(gr => gr.Name == name);
+            ClassLibrary.Group group = DB.Groups.FirstOrDefault(gr => gr.Name == name);
             if (group == null)
             {
                 Console.WriteLine("Введите сокращение: ");
@@ -293,13 +289,12 @@ namespace ConsoleApp
                 Employee classroomteacher = CreateEmployee();
 
 
-                group = new Group(name, shortname, population, yearOfadmission, classroomteacher, speciality);
+                group = new ClassLibrary.Group(name, shortname, population, yearOfadmission, classroomteacher, speciality);
                 DB.Groups.Add(group);
 
             }
             return group;
         }
-
 
 
         public static Speciality CreateSpeciality()
