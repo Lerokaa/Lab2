@@ -17,6 +17,7 @@ namespace ConsoleApp
                 Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
                 Console.WriteLine("3.Создать сотрудника");
+                Console.WriteLine("3.Создать дисциплину");
                 int menu;
                 while (!int.TryParse(Console.ReadLine(), out menu) || menu < 0)
                     Console.WriteLine("Нужно ввести целое число =>0");
@@ -28,6 +29,10 @@ namespace ConsoleApp
                                 Printer.PrintClassroom(classroom);
                             foreach (Employee employee in DB.Employees)
                                 Printer.PrintEmployee(employee);
+                            foreach (Lesson lesson in DB.lessons)
+                                Printer.PrintLesson(lesson);
+                            foreach (Discipline discipline in DB.disciplines)
+                                Printer.PrintDiscipline(discipline);
                             break;
                         }
                     case 1:
@@ -42,6 +47,8 @@ namespace ConsoleApp
                     case 3:
                         {
                             Creator.CreateEmployee();
+                            Creator.CreateDiscipline();
+                            break;
                         }
                 }
             }

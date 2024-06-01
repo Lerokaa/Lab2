@@ -13,5 +13,6 @@ namespace ConsoleApp
         public static List<Division> Division = new List<Division>();
         public static List<Lesson> lessons = new List<Lesson>();
         public static List<Employee> Employees = new List<Employee>();
+        public static List<Discipline> disciplines = new List<Discipline>();
     }
 }
