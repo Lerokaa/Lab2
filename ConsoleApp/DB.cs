@@ -19,5 +19,7 @@ namespace ConsoleApp
 
         public static List<Discipline> disciplines = new List<Discipline>();
         public static List<Position> Position = new List<Position>();
+        public static List<WorkShift> WorkShifts = new List<WorkShift>();
+
     }
 }

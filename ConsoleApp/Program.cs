@@ -20,6 +20,7 @@ namespace ConsoleApp
 
                Console.WriteLine("11.Создать подразделение");
                 Console.WriteLine("6.Создать специальность.");
+                Console.WriteLine("8.Создать смену.");
 
                 Console.WriteLine("10.Создать должность");
 
@@ -78,6 +79,11 @@ namespace ConsoleApp
                     case 6:
                         {
                             Creator.CreateSpeciality();
+                            break;
+                        }
+                    case 8:
+                        {
+                            Creator.CreateWorkShift();
                             break;
                         }
                     case 10:
