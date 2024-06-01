@@ -66,6 +66,14 @@ namespace ConsoleApp
             Console.WriteLine("Название дисциплины: {0}", discipline.Name);
             Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
         }
+        public static void PrintGroup(ClassLibrary.Group group)
+        {
+            Console.WriteLine("Группа: {0}", group);
+        }
+        public static void PrintPair(Pair pair)
+        {
+            Console.WriteLine("Пара: {0}", pair);
+        }
 
     }
 }
