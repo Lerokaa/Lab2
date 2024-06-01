@@ -192,19 +192,33 @@ namespace ConsoleApp
         }
         public static WorkShift CreateWorkShift()
         {
-            // Получение ключевых данных от пользователя
+           
             Console.WriteLine("Введите название смены:");
             string name = Console.ReadLine();
 
-            // Проверка ввода пользователя
+           
             while (string.IsNullOrEmpty(name))
             {
                 Console.WriteLine("Название смены не может быть пустым. Повторите ввод:");
                 name = Console.ReadLine();
             }
 
-            // Создание нового объекта WorkShift
-            WorkShift workShift = new WorkShift(name, DateTime.Now);
+
+            WorkShift db_shift = DB.WorkShifts.FirstOrDefault(ws => ws.Name == name);
+            if (db_shift != null)
+            {
+                Console.WriteLine("Такая смена уже есть");
+                return db_shift;
+            }
+            
+            
+
+          
+            WorkShift workShift = new WorkShift(name);
+
+
+            
+            DB.WorkShifts.Add(workShift);
 
             Console.WriteLine("Смена успешно создана.");
 

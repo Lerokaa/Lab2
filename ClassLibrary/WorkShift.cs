@@ -9,12 +9,11 @@ namespace ClassLibrary
     public class WorkShift
     {
         private readonly string name;
-        private readonly DateTime date;
 
-        public WorkShift(string name, DateTime? date = null)
+        public WorkShift(string name)
         {
             this.name = name;
-            this.date = date ?? DateTime.Now;
+           
         }
 
         public string Name
@@ -22,9 +21,6 @@ namespace ClassLibrary
             get { return name; }
         }
 
-        public DateTime Date
-        {
-            get { return date; }
-        }
+        
     }
 }

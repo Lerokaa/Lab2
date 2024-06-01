@@ -95,7 +95,6 @@ namespace ConsoleApp
         public static void PrintWorkShift(WorkShift workShift)
         {
             Console.WriteLine("Название смены: {0}", workShift.Name);
-            Console.WriteLine("Дата смены: {0}", workShift.Date);
         }
         public static void PrintTypeOfActivity(TypeOfActivity typeOfActivity)
         {
@@ -108,6 +107,7 @@ namespace ConsoleApp
             Console.WriteLine("Оклад: {0}", position.Salary);
             PrintDivision(position.Division);
         }
+
 
     }
 }
