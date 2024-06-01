@@ -28,5 +28,10 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+        public static void PrintDiscipline(Discipline discipline)
+        {
+            Console.WriteLine("Название дисциплины: {0}", discipline.Name);
+            Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
+        }
     }
 }
