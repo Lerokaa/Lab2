@@ -86,6 +86,8 @@ namespace ConsoleApp
                     case 8:
                         {
                             Creator.CreateWorkShift();
+                            break;
+                        }
 
                     case 9:
                         {

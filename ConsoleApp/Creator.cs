@@ -171,12 +171,6 @@ namespace ConsoleApp
             return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
         }
 
-        public static WorkShift CreateWorkShift()
-        {
-            return null;
-        }
-
-
 
         public static Discipline CreateDiscipline()
         {
@@ -207,7 +201,7 @@ namespace ConsoleApp
             }
 
             // Создание нового объекта WorkShift
-            WorkShift workShift = new WorkShift(name);
+            WorkShift workShift = new WorkShift(name, DateTime.Now);
 
             Console.WriteLine("Смена успешно создана.");
 
