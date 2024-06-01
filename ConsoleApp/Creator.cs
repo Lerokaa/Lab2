@@ -195,18 +195,23 @@ namespace ConsoleApp
         public static Position CreatePosition()
         {
 
-            Division division = CreateDivision();
+            
+
 
             Console.WriteLine("Введите название должности:");
             string title = Console.ReadLine();
 
-            Console.WriteLine("Введите оклад:");
-            decimal salary = decimal.Parse(Console.ReadLine());
-
-            Position position = DB.Position.FirstOrDefault(l => division == l.Division);
+            Position position = DB.Position.FirstOrDefault(l => title == l.Title);
 
             if (position == null)
             {
+                Console.WriteLine("Введите оклад:");
+                decimal salary = decimal.Parse(Console.ReadLine());
+
+                Console.WriteLine("Введите название подразделения:");
+                Division division = CreateDivision();
+
+
                 position = new Position(title, salary, division);
                 DB.Position.Add(position);
                 Console.WriteLine("Должность создана");
