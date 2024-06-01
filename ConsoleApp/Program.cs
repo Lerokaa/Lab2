@@ -16,6 +16,7 @@ namespace ConsoleApp
                 Console.WriteLine("0.Вывести базу данных");
                 Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
+                Console.WriteLine("3.Создать дисциплину");
                 int menu;
                 while (!int.TryParse(Console.ReadLine(), out menu) || menu < 0)
                     Console.WriteLine("Нужно ввести целое число =>0");
@@ -25,8 +26,12 @@ namespace ConsoleApp
                         {
                             foreach (Classroom classroom in DB.Classrooms)
                                 Printer.PrintClassroom(classroom);
+
                             foreach (Lesson lesson in DB.lessons)
                                 Printer.PrintLesson(lesson);
+
+                            foreach (Discipline discipline in DB.disciplines)
+                                Printer.PrintDiscipline(discipline);
                             break;
                         }
                     case 1:
@@ -36,6 +41,11 @@ namespace ConsoleApp
                         }
                     case 2:
                         {
+                            break;
+                        }
+                    case 3:
+                        {
+                            Creator.CreateDiscipline();
                             break;
                         }
                 }

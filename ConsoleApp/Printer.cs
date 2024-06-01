@@ -20,10 +20,6 @@ namespace ConsoleApp
             PrintTypeOfActivity(lesson.TypeOfActivity);
         }
 
-        public static void PrintDiscipline(Discipline discipline)
-        {
-            Console.WriteLine("Дисциплина: {0}", discipline);
-        }
         public static void PrintClassroom(Classroom classroom)
         {
             Console.WriteLine("Название аудитории: {0}", classroom.Name);
@@ -43,6 +39,7 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+
         public static void PrintGroup(ClassLibrary.Group group)
         {
             Console.WriteLine("Группа: {0}", group);
@@ -54,6 +51,10 @@ namespace ConsoleApp
         public static void PrintTypeOfActivity(TypeOfActivity typeOfActivity)
         {
             Console.WriteLine("Тип активности: {0}", typeOfActivity);
+        public static void PrintDiscipline(Discipline discipline)
+        {
+            Console.WriteLine("Название дисциплины: {0}", discipline.Name);
+            Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
         }
     }
 }
