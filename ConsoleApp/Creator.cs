@@ -14,7 +14,7 @@ namespace ConsoleApp
             Console.WriteLine("Введите название аудитории: ");
             string name = Console.ReadLine();
             
-            
+           
             Classroom classroom = DB.Classrooms.FirstOrDefault<Classroom>(cl => cl.Name == name);
             if(classroom == null) 
             {

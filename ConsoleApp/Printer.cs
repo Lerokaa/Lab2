@@ -39,6 +39,10 @@ namespace ConsoleApp
             PrintEmployee(group.Employee);
             PrintSpeciality(group.Speciality);
         }
+        public static void PrintSpeciality(Speciality speciality)
+        {
+            Console.WriteLine(" Специальность: {0}", speciality);
+        }
         public static void PrintEmployee(Employee employee)
         {
             Console.WriteLine("Ответственный сотрудник: {0}", employee);
@@ -46,10 +50,6 @@ namespace ConsoleApp
         public static void PrintEquipment(Equipment equipment)
         {
             Console.WriteLine("Оборудование: {0}", equipment);
-        }
-        public static void PrintSpeciality(Speciality speciality)
-        {
-            Console.WriteLine(" Специальность: {0}", speciality);
         }
     }
 }
