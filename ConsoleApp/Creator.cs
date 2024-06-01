@@ -176,10 +176,10 @@ namespace ConsoleApp
 
         public static Speciality CreateSpeciality()
         {
-            
+
             Console.WriteLine("Введите полное название специальности:");
             string SpecialityName = Console.ReadLine();
-            
+
             Speciality speciality = DB.speciality.FirstOrDefault(s => SpecialityName == s.SpecialityName);
             if (speciality == null)
             {
@@ -191,7 +191,7 @@ namespace ConsoleApp
             }
             return speciality;
 
-
+        }
         public static Position CreatePosition()
         {
 
