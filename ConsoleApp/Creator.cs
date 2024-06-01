@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using ClassLibrary;
 
 namespace ConsoleApp
@@ -157,6 +158,7 @@ namespace ConsoleApp
         {
             return null;
         }
+
         public static Employee CreateEmployee()
         {
             Console.WriteLine("Введите фамилию сотрудника:");
@@ -165,13 +167,16 @@ namespace ConsoleApp
             Console.WriteLine("Введите имя сотрудника:");
             string firstName = Console.ReadLine();
 
-
-
             Console.WriteLine("Введите отчество сотрудника:");
-
             string patronypicName = Console.ReadLine();
 
-            return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
+            Employee employee = DB.Employees.FirstOrDefault(ln => ln.LastName == lastName && ln.FirstName == firstName && ln.PatronypicName == patronypicName);
+            if (employee == null)
+            {
+                employee = new Employee(lastName, firstName, patronypicName, CreatePosition());
+                DB.Employees.Add(employee);
+            }
+            return employee;
         }
 
 
