@@ -12,6 +12,7 @@ namespace ConsoleApp
     {
         public static void PrintLesson(Lesson lesson)
         {
+            Console.WriteLine(lesson.DateTime);
             PrintDiscipline(lesson.Discipline);
             PrintEmployee(lesson.Employee);
             PrintClassroom(lesson.Classroom);
