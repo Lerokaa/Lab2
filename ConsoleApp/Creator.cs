@@ -122,6 +122,7 @@ namespace ConsoleApp
 
             Classroom classroom = DB.Classrooms.FirstOrDefault(cl => cl.Name == name);
             if (classroom == null)
+
             {
                 Console.WriteLine("Введите количество мест?");
                 int seatingCapacity;
@@ -246,6 +247,41 @@ namespace ConsoleApp
             return null;
         }
 
+        public static Group CreateGroup()
+        {
+            Console.WriteLine("Введите название группы: ");
+            string name = Console.ReadLine();
+            Group group = DB.Groups.FirstOrDefault<Group>(gr => gr.Name == name);
+            if (group == null)
+            {
+                Console.WriteLine("Введите сокращение: ");
+                string shortname = Console.ReadLine();
+
+                Console.WriteLine("Введите численность: ");
+                int population;
+                while (!int.TryParse(Console.ReadLine(), out population) || population < 0)
+                    Console.WriteLine("Нужно ввести целое число =>0");
+
+                Console.WriteLine("Введите год поступленя:");
+                int yearOfadmission;
+                while (!int.TryParse(Console.ReadLine(), out yearOfadmission) || yearOfadmission < 1900 || yearOfadmission > 2025)
+                    Console.WriteLine("Нужно ввести год");
+
+                Console.WriteLine("Введите спецаильность: ");
+                Speciality speciality = CreateSpeciality();
+
+                Console.WriteLine("Введите классного руководителя: ");
+                Employee classroomteacher = CreateEmployee();
+
+
+                group = new Group(name, shortname, population, yearOfadmission, classroomteacher, speciality);
+                DB.Groups.Add(group);
+
+            }
+            return group;
+
+
+
         public static Speciality CreateSpeciality()
         {
 
@@ -285,6 +321,7 @@ namespace ConsoleApp
                 Console.WriteLine("Должность создана");
             }
             return position;
+
         }
     }
 }

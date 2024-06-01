@@ -16,6 +16,9 @@ namespace ConsoleApp
                 Console.WriteLine("0.Вывести базу данных");
                 Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
+
+                Console.WriteLine("4.Создать группу");
+
                 Console.WriteLine("3.Создать дисциплину");
                 Console.WriteLine("9.Создать сотрудника");
                Console.WriteLine("11.Создать подразделение");
@@ -25,6 +28,7 @@ namespace ConsoleApp
                 Console.WriteLine("7.Создать пару");
 
                 Console.WriteLine("10.Создать должность");
+
 
                 int menu;
                 while (!int.TryParse(Console.ReadLine(), out menu) || menu < 0)
@@ -104,6 +108,11 @@ namespace ConsoleApp
                     case 10:
                         {
                             Creator.CreatePosition();
+                            break;
+                        }
+                    case 4:
+                        {
+                            Creator.CreateGroup();
                             break;
                         }
                 }

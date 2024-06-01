@@ -8,5 +8,6 @@ namespace ClassLibrary
 {
     internal class Corpus
     {
+        
     }
 }
