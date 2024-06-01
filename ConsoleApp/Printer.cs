@@ -79,5 +79,13 @@ namespace ConsoleApp
             Console.WriteLine("Тип активности: {0}", typeOfActivity);
         }
 
+
+        public static void PrintPosition(Position position)
+        {
+            Console.WriteLine("Должность: {0}", position.Title);
+            Console.WriteLine("Оклад: {0}", position.Salary);
+            PrintDivision(position.Division);
+        }
+
     }
 }

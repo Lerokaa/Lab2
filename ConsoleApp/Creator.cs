@@ -73,7 +73,6 @@ namespace ConsoleApp
             return null;
         }
 
-
         public static Classroom CreateClassroom()
         {
             Console.WriteLine("Введите название аудитории: ");
@@ -125,6 +124,7 @@ namespace ConsoleApp
     }
 
 
+
         public static Discipline CreateDiscipline()
         {
             Console.WriteLine("Введите название дисциплины");
@@ -148,6 +148,7 @@ namespace ConsoleApp
             string pattern = @"^(2[0-3]|[01][0-9]):[0-5][0-9]$";
             return Regex.IsMatch(time, pattern);
         }
+
         public static Division CreateDivision()
         {
             Employee head = CreateEmployee();
@@ -189,6 +190,30 @@ namespace ConsoleApp
                 Console.WriteLine("Специальность успешно создана.");
             }
             return speciality;
+
+
+        public static Position CreatePosition()
+        {
+
+            Division division = CreateDivision();
+
+            Console.WriteLine("Введите название должности:");
+            string title = Console.ReadLine();
+
+            Console.WriteLine("Введите оклад:");
+            decimal salary = decimal.Parse(Console.ReadLine());
+
+            Position position = DB.Position.FirstOrDefault(l => division == l.Division);
+
+            if (position == null)
+            {
+                position = new Position(title, salary, division);
+                DB.Position.Add(position);
+                Console.WriteLine("Должность создана");
+            }
+            return position;
+
+
         }
     }
 }
