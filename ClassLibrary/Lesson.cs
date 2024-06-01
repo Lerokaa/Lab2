@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
+    //https://docs.google.com/document/d/1KZXfKJussGflgWnWylGbFrwmdcn3liYKIsgmtxB1mN0/edit
+
     public class Lesson
     {
         private readonly DateTime datetime;
@@ -27,13 +29,13 @@ namespace ClassLibrary
             this.pair = pair;
             this.typeOfActivity = typeOfActivity;
         }
+
         public DateTime DateTime { get { return datetime; } }
-        public Discipline Discipline { get { return discipline; } }
+        public Discipline Discipline { get {  return discipline; } }
         public Employee Employee { get { return employee; } }
         public Classroom Classroom { get {  return classroom; } }
         public Group Group { get { return group; } }
         public Pair Pair { get { return pair; } }
-
         public TypeOfActivity TypeOfActivity { get { return typeOfActivity; } }
     }
    

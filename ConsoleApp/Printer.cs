@@ -1,9 +1,10 @@
-﻿using System;
+using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using ClassLibrary;
 
 namespace ConsoleApp
 {
@@ -41,6 +42,7 @@ namespace ConsoleApp
         public static void PrintOrganization(Organization organization)
         {
             Console.WriteLine("Организация: {0}", organization);
+
         }
     }
 }
