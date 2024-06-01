@@ -27,6 +27,8 @@ namespace ConsoleApp
                             foreach (Classroom classroom in DB.Classrooms)
                                 Printer.PrintClassroom(classroom);
                             break;
+                            foreach(Speciality speciality in DB.speciality) 
+                                Printer.PrintSpeciality(speciality);
                         }
                     case 1:
                         {
