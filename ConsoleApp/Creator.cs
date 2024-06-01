@@ -75,11 +75,31 @@ namespace ConsoleApp
         }
         public static Student CreateStudent()
         {
-            Lastname lastname = CreateLastname();
-            Firstname firstname = CreateFirstname();
-            Patronymic patronymic = CreatePatronymic();
-            ClassLibrary.Group group = CreateGroup();
-            DateTime.birthDate birthdate = CreateBirthdate();
+            Console.WriteLine("Введите имя студента");
+            string lastname = Console.ReadLine();
+            Student student = DB.Student.FirstOrDefault<Student>(st => st.lastname == lastname);
+            if (student == null)
+            {
+                Console.WriteLine("Введите фамилию студента");
+                string firstname = Console.ReadLine();
+
+                Console.WriteLine("Введите отчество студента");
+                string patronymic = Console.ReadLine();
+
+                Console.WriteLine("Введите группу студента");
+                Group group = CreateGroup();
+
+                Console.WriteLine("Введите дату рождения студента");
+                int birthDate;
+                while (!int.TryParse(Console.ReadLine(), out birthDate) || birthDate < 0 || birthDate < 1900 || birthDate > 2024)
+                    Console.WriteLine("Введите целое число =>0 ");
+
+                student = new Student(lastname, firstname, patronymic, group, birthDate);
+                DB.Student.Add(student);
+
+
+            }
+            return student;
 
 
         }
