@@ -72,7 +72,11 @@ namespace ConsoleApp
         }
         public static void PrintPair(Pair pair)
         {
-            Console.WriteLine("Пара: {0}", pair);
+            Console.WriteLine("Время начала пары: {0}", pair.PairStart.ToString());
+            Console.WriteLine("Время конца пары: {0}", pair.PairEnd.ToString());
+            Console.WriteLine("Времы начала перерыва: {0}", pair.RestStart.ToString() ?? "Перерыва нет");
+            Console.WriteLine("Время конца перерыва: {0}", pair.RestEnd.ToString() ?? "Перерыва нет");
+            PrintWorkShift(pair.WorkShift);
         }
         public static void PrintTypeOfActivity(TypeOfActivity typeOfActivity)
         {
@@ -85,5 +89,14 @@ namespace ConsoleApp
             Console.WriteLine("Оклад: {0}", position.Salary);
             PrintDivision(position.Division);
         }
+
+
+        
+        public static void PrintWorkShift(WorkShift workShift)
+        {
+            Console.WriteLine();
+        }
+
+
     }
 }
