@@ -80,7 +80,7 @@ namespace ConsoleApp
             Pair db_pair = DB.pairs.FirstOrDefault(pa => pa.PairStart == pairstart);
             if (db_pair != null)
             {
-                return;
+                return db_pair;
             }
 
             TimeSpan pairend;
