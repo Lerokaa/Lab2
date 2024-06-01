@@ -154,13 +154,14 @@ namespace ConsoleApp
             Employee head = CreateEmployee();
             Organization organization = CreateOrganization();
 
-            Console.WriteLine("Введите название организации:");
-            string name = Console.ReadLine();
+            
 
             Division division = DB.Division.FirstOrDefault(l => head == l.Head && organization == l.Organization);
 
             if (division == null)
             {
+                Console.WriteLine("Введите название организации:");
+                string name = Console.ReadLine();
                 division = new Division(name, head, organization);
                 DB.Division.Add(division);
                 Console.WriteLine("Подразделение успешно создано.");
@@ -176,10 +177,10 @@ namespace ConsoleApp
 
         public static Speciality CreateSpeciality()
         {
-            
+
             Console.WriteLine("Введите полное название специальности:");
             string SpecialityName = Console.ReadLine();
-            
+
             Speciality speciality = DB.speciality.FirstOrDefault(s => SpecialityName == s.SpecialityName);
             if (speciality == null)
             {
@@ -191,7 +192,7 @@ namespace ConsoleApp
             }
             return speciality;
 
-
+        }
         public static Position CreatePosition()
         {
 
