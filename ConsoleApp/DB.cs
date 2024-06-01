@@ -19,6 +19,6 @@ namespace ConsoleApp
         public static List<Employee> Employees = new List<Employee>();
 
         public static List<Pair> pairs = new List<Pair>();
-
+        public static List<WorkShift> WorkShifts = new List<WorkShift>();
     }
 }

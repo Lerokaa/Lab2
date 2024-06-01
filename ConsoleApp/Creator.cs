@@ -193,6 +193,26 @@ namespace ConsoleApp
             }
             return discipline;
         }
+        public static WorkShift CreateWorkShift()
+        {
+            // Получение ключевых данных от пользователя
+            Console.WriteLine("Введите название смены:");
+            string name = Console.ReadLine();
+
+            // Проверка ввода пользователя
+            while (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Название смены не может быть пустым. Повторите ввод:");
+                name = Console.ReadLine();
+            }
+
+            // Создание нового объекта WorkShift
+            WorkShift workShift = new WorkShift(name);
+
+            Console.WriteLine("Смена успешно создана.");
+
+            return workShift;
+        }
 
         private static bool ValidateTimeFormat(string time)
         {
