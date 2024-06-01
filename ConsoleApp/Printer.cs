@@ -44,5 +44,16 @@ namespace ConsoleApp
             Console.WriteLine("Организация: {0}", organization);
 
         }
+              public static void PrintLesson(Lesson lesson)
+        {
+            Console.WriteLine(lesson.DateTime);
+            PrintDiscipline(lesson.Discipline);
+            PrintEmployee(lesson.Employee);
+            PrintClassroom(lesson.Classroom);
+            PrintGroup(lesson.Group);
+            PrintPair(lesson.Pair);
+            PrintTypeOfActivity(lesson.TypeOfActivity);
+        }
+
     }
 }
