@@ -34,11 +34,11 @@ namespace ConsoleApp
         }
         public static void PrintStudent(Student student)
         {
-            Console.WriteLine("Фамилия: {0}", student.firstname);
-            Console.WriteLine("Имя: {0}", student.lastname);
-            Console.WriteLine("Отчество: {0}", student.patronymic);
-            PrintGroup(student.group);
-            Console.WriteLine("День рождения: {0}", student.birthDate);
+            Console.WriteLine("Фамилия: {0}", student.Firstname);
+            Console.WriteLine("Имя: {0}", student.Lastname);
+            Console.WriteLine("Отчество: {0}", student.Patronymic);
+            PrintGroup(student.Group);
+            Console.WriteLine("День рождения: {0}", student.BirthDate);
         }
     }
 }

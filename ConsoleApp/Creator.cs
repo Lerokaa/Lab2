@@ -32,6 +32,7 @@ namespace ConsoleApp
                 Console.WriteLine("Неверный формат даты. Повторите ввод (в формате гггг-мм-дд):");
                 dateInput = Console.ReadLine();
             }
+            Lesson lesson = DB.lessons.FirstOrDefault(l => discipline == l.Discipline && employee == l.Employee && classroom == l.Classroom && pair == l.Pair && group == l.Group && typeOfActivity == l.TypeOfActivity);
 
             if (lesson == null)
             {
@@ -77,7 +78,7 @@ namespace ConsoleApp
         {
             Console.WriteLine("Введите имя студента");
             string lastname = Console.ReadLine();
-            Student student = DB.Student.FirstOrDefault<Student>(st => st.lastname == lastname);
+            Student student = DB.Student.FirstOrDefault<Student>(st => st.Lastname == lastname);
             if (student == null)
             {
                 Console.WriteLine("Введите фамилию студента");
@@ -87,11 +88,11 @@ namespace ConsoleApp
                 string patronymic = Console.ReadLine();
 
                 Console.WriteLine("Введите группу студента");
-                Group group = CreateGroup();
+                ClassLibrary.Group group = CreateGroup();
 
                 Console.WriteLine("Введите дату рождения студента");
-                int birthDate;
-                while (!int.TryParse(Console.ReadLine(), out birthDate) || birthDate < 0 || birthDate < 1900 || birthDate > 2024)
+                DateTime birthDate;
+                while (!DateTime.TryParse(Console.ReadLine(), out birthDate))
                     Console.WriteLine("Введите целое число =>0 ");
 
                 student = new Student(lastname, firstname, patronymic, group, birthDate);

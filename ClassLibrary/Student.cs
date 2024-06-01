@@ -14,7 +14,7 @@ namespace ClassLibrary
         private readonly Group group;
         private readonly DateTime birthDate;
         //Конструктор класса
-        public Student(string lastname, string firstname, string patronymic, string group, DateTime birthDate)
+        public Student(string lastname, string firstname, string patronymic, Group group, DateTime birthDate)
         {
             this.lastname = lastname;
             this.firstname = firstname;
@@ -24,11 +24,11 @@ namespace ClassLibrary
 
         }
 
-        public string lastname { get { return lastname; } }
-        public string firstname { get { return firstname; } }
-        public string patronymic { get { return patronymic; } }
-        public Group group { get { return group; } }
-        public DateTime birthDate { get { return birthDate; } }
+        public string Lastname { get { return lastname; } }
+        public string Firstname { get { return firstname; } }
+        public string Patronymic { get { return patronymic; } }
+        public Group Group { get { return group; } }
+        public DateTime BirthDate { get { return birthDate; } }
 
     }
     
