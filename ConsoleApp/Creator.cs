@@ -83,9 +83,20 @@ namespace ConsoleApp
             return null;
         }
 
-        private static Discipline CreateDiscipline()
+        public static Discipline CreateDiscipline()
         {
-            return null;
+            Console.WriteLine("Введите название дисциплины");
+            string name = Console.ReadLine();
+            Discipline discipline = DB.disciplines.FirstOrDefault(d => d.Name == name);
+            if (discipline == null)
+            {
+                Console.WriteLine("Введите сокращение: ");
+                string shortname = Console.ReadLine();
+
+                discipline = new Discipline(name, shortname);
+                DB.disciplines.Add(discipline);
+            }
+            return discipline;
         }
 
 
