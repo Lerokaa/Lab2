@@ -77,6 +77,12 @@ namespace ConsoleApp
                 Console.Write("Неправильный формат! Введите время начала пары: ");
             }
 
+            Pair db_pair = DB.pairs.FirstOrDefault(pa => pa.PairStart == pairstart);
+            if (db_pair != null)
+            {
+                return;
+            }
+
             TimeSpan pairend;
             Console.Write("Введите время конца пары: ");
             while (!TimeSpan.TryParse(Console.ReadLine(), out pairend))
