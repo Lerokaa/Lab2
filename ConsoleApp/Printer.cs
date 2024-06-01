@@ -99,13 +99,5 @@ namespace ConsoleApp
             PrintDivision(position.Division);
         }
 
-
-        
-        public static void PrintWorkShift(WorkShift workShift)
-        {
-            Console.WriteLine("jfkflf: {0}", workShift);
-        }
-
-
     }
 }
