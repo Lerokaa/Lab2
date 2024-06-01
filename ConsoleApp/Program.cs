@@ -19,6 +19,8 @@ namespace ConsoleApp
                 Console.WriteLine("3.Создать дисциплину");
                 Console.WriteLine("6.Создать специальность.");
                 Console.WriteLine("10.Создать должность");
+                Console.WriteLine("11.Создать подразделение");
+                
                 int menu;
                 while (!int.TryParse(Console.ReadLine(), out menu) || menu < 0)
                     Console.WriteLine("Нужно ввести целое число =>0");
@@ -28,19 +30,21 @@ namespace ConsoleApp
                         {
                             foreach (Classroom classroom in DB.Classrooms)
                                 Printer.PrintClassroom(classroom);
-
+                            foreach (Employee employee in DB.Employees)
+                                Printer.PrintEmployee(employee);
                             foreach (Lesson lesson in DB.lessons)
                                 Printer.PrintLesson(lesson);
-
                             foreach (Discipline discipline in DB.disciplines)
                                 Printer.PrintDiscipline(discipline);
 
                             foreach (Speciality speciality in DB.speciality)
                                 Printer.PrintSpeciality(speciality);
                           
+                            foreach (Division division in DB.Division)
+                                Printer.PrintDivision(division);
+                            
                             foreach (Position position in DB.Position)
                                 Printer.PrintPosition(position);
-
                             break;
                            
                         }
@@ -53,22 +57,30 @@ namespace ConsoleApp
                         {
                             break;
                         }
-                    case 3:
+                     case 3:
                         {
+                            Creator.CreateEmployee();
                             Creator.CreateDiscipline();
                             break;
                         }
-
                     case 6:
                         {
                             Creator.CreateSpeciality();
                             break;
                         }
+
                     case 10:
                         {
                             Creator.CreatePosition();
                             break;
                         }
+
+                    case 11:
+                        {
+                            Creator.CreateDivision();
+                            break;
+                        }
+                    
                 }
             }
         }

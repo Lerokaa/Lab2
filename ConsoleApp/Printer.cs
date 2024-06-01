@@ -10,17 +10,6 @@ namespace ConsoleApp
 {
     internal static class Printer
     {
-        public static void PrintLesson(Lesson lesson)
-        {
-            Console.WriteLine(lesson.DateTime);
-            PrintDiscipline(lesson.Discipline);
-            PrintEmployee(lesson.Employee);
-            PrintClassroom(lesson.Classroom);
-            PrintGroup(lesson.Group);
-            PrintPair(lesson.Pair);
-            PrintTypeOfActivity(lesson.TypeOfActivity);
-        }
-
         public static void PrintClassroom(Classroom classroom)
         {
             Console.WriteLine("Название аудитории: {0}", classroom.Name);
@@ -40,10 +29,43 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+
         public static void PrintSpeciality(Speciality speciality)
         {
             Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
             Console.WriteLine($"Сокращенное название: {speciality.ReductionName}");
+        }
+
+        public static void PrintDivision(Division division)
+
+        {
+            Console.WriteLine("Название подразделения: {0}", division.Name);
+            PrintHead(division.Head);
+            PrintOrganization(division.Organization);
+        }
+        public static void PrintHead(Employee head)
+        {
+            Console.WriteLine("Руководитель: {0}", head);
+        }
+        public static void PrintOrganization(Organization organization)
+        {
+            Console.WriteLine("Организация: {0}", organization);
+
+        }
+              public static void PrintLesson(Lesson lesson)
+        {
+            Console.WriteLine(lesson.DateTime);
+            PrintDiscipline(lesson.Discipline);
+            PrintEmployee(lesson.Employee);
+            PrintClassroom(lesson.Classroom);
+            PrintGroup(lesson.Group);
+            PrintPair(lesson.Pair);
+            PrintTypeOfActivity(lesson.TypeOfActivity);
+        }
+        public static void PrintDiscipline(Discipline discipline)
+        {
+            Console.WriteLine("Название дисциплины: {0}", discipline.Name);
+            Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
         }
         public static void PrintGroup(ClassLibrary.Group group)
         {
@@ -57,11 +79,7 @@ namespace ConsoleApp
         {
             Console.WriteLine("Тип активности: {0}", typeOfActivity);
         }
-        public static void PrintDiscipline(Discipline discipline)
-        {
-            Console.WriteLine("Название дисциплины: {0}", discipline.Name);
-            Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
-        }
+
 
         public static void PrintPosition(Position position)
         {
@@ -69,10 +87,6 @@ namespace ConsoleApp
             Console.WriteLine("Оклад: {0}", position.Salary);
             PrintDivision(position.Division);
         }
-        public static void PrintDivision(Division division)
-        {
-            Console.WriteLine("Подразделение: {0}", division);
 
-        }
     }
 }
