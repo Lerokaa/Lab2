@@ -32,6 +32,10 @@ namespace ConsoleApp
 
                             foreach (Discipline discipline in DB.disciplines)
                                 Printer.PrintDiscipline(discipline);
+
+                            foreach (Position position in DB.Position)
+                                Printer.PrintPosition(position);
+
                             break;
                         }
                     case 1:
@@ -46,6 +50,11 @@ namespace ConsoleApp
                     case 3:
                         {
                             Creator.CreateDiscipline();
+                            break;
+                        }
+                    case 10:
+                        {
+                            Creator.CreatePosition();
                             break;
                         }
                 }
