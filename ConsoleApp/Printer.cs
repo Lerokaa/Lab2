@@ -51,6 +51,7 @@ namespace ConsoleApp
         public static void PrintTypeOfActivity(TypeOfActivity typeOfActivity)
         {
             Console.WriteLine("Тип активности: {0}", typeOfActivity);
+        }
         public static void PrintDiscipline(Discipline discipline)
         {
             Console.WriteLine("Название дисциплины: {0}", discipline.Name);
