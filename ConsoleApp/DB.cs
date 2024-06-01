@@ -16,5 +16,6 @@ namespace ConsoleApp
         public static List<Speciality> speciality = new List<Speciality>();
         public static List<Discipline> disciplines = new List<Discipline>();
         public static List<Position> Position = new List<Position>();
+        public static List<Pair> pairs = new List<Pair>();
     }
 }
