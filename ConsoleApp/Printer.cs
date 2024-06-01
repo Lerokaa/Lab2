@@ -74,5 +74,9 @@ namespace ConsoleApp
             Console.WriteLine("Подразделение: {0}", division);
 
         }
+        public static void PrintWorkShift(WorkShift workShift)
+        {
+            Console.WriteLine();
+        }
     }
 }

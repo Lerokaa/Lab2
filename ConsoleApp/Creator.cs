@@ -85,22 +85,17 @@ namespace ConsoleApp
             }
 
             TimeSpan reststart;
-            Console.Write("Введите время начала перерыва (ничего не вводите, если перерыва нет): ");
-            string _reststart = Console.ReadLine();
-            while (_reststart != "" && (!TimeSpan.TryParse(_reststart, out reststart) || reststart < pairstart || reststart > pairend))
+            Console.Write("Введите время начала перерыва: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), out reststart) || reststart < pairstart || reststart > pairend)
             {
-                Console.Write("Неправильно! Введите время начала перерыва (ничего не вводите, если перерыва нет): ");
-                _reststart = Console.ReadLine();
+                Console.Write("Неправильно! Введите время начала перерыва: ");
             }
 
             TimeSpan restend;
-            if (_reststart != "")
+            Console.Write("Введите время конца перерыва: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), out restend) || restend < reststart || restend > pairend)
             {
-                Console.Write("Введите время конца перерыва: ");
-                while (!TimeSpan.TryParse(Console.ReadLine(), out restend) || restend < reststart || restend > pairend)
-                {
-                    Console.Write("Неправильно! Введите время конца перерыва: ");
-                }
+                Console.Write("Неправильно! Введите время конца перерыва: ");
             }
 
             Console.WriteLine("Введите смену: ");
@@ -160,6 +155,11 @@ namespace ConsoleApp
             return null;
         }
         public static Employee CreateEmployee()
+        {
+            return null;
+        }
+
+        public static WorkShift CreateWorkShift()
         {
             return null;
         }
