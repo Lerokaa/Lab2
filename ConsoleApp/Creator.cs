@@ -151,13 +151,14 @@ namespace ConsoleApp
         }
 
         public static Equipment CreateEquipment()
-        {
-            return null;
-        }
-        public static Employee CreateEmployee()
-        {
-            return null;
-        }
+    {
+        return null;
+    }
+    public static Employee CreateEmployee()
+    {
+        return null;
+    }
+
 
         public static WorkShift CreateWorkShift()
         {
@@ -189,31 +190,75 @@ namespace ConsoleApp
             return Regex.IsMatch(time, pattern);
         }
 
+        public static Division CreateDivision()
+        {
+            Employee head = CreateEmployee();
+            Organization organization = CreateOrganization();
 
-        private static Division CreateDivision()
+            Console.WriteLine("Введите название организации:");
+            string name = Console.ReadLine();
+
+            Division division = DB.Division.FirstOrDefault(l => head == l.Head && organization == l.Organization);
+
+            if (division == null)
+            {
+                division = new Division(name, head, organization);
+                DB.Division.Add(division);
+                Console.WriteLine("Подразделение успешно создано.");
+            }
+
+            return division;
+        }
+
+        private static Organization CreateOrganization()
         {
             return null;
+        }
+
+        public static Speciality CreateSpeciality()
+        {
+
+            Console.WriteLine("Введите полное название специальности:");
+            string SpecialityName = Console.ReadLine();
+
+            Speciality speciality = DB.speciality.FirstOrDefault(s => SpecialityName == s.SpecialityName);
+            if (speciality == null)
+            {
+                Console.WriteLine("Введите сокращение названия специальности:");
+                string ReductionName = Console.ReadLine();
+                speciality = new Speciality(SpecialityName, ReductionName);
+                DB.speciality.Add(speciality);
+                Console.WriteLine("Специальность успешно создана.");
+            }
+            return speciality;
+
         }
         public static Position CreatePosition()
         {
 
-            Division division = CreateDivision();
+            
+
 
             Console.WriteLine("Введите название должности:");
             string title = Console.ReadLine();
 
-            Console.WriteLine("Введите оклад:");
-            decimal salary = decimal.Parse(Console.ReadLine());
-
-            Position position = DB.Position.FirstOrDefault(l => division == l.Division);
+            Position position = DB.Position.FirstOrDefault(l => title == l.Title);
 
             if (position == null)
             {
+                Console.WriteLine("Введите оклад:");
+                decimal salary = decimal.Parse(Console.ReadLine());
+
+                Console.WriteLine("Введите название подразделения:");
+                Division division = CreateDivision();
+
+
                 position = new Position(title, salary, division);
                 DB.Position.Add(position);
                 Console.WriteLine("Должность создана");
             }
             return position;
+
 
         }
     }
