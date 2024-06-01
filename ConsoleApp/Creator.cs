@@ -91,7 +91,7 @@ namespace ConsoleApp
                 Employee classroomteacher = CreateEmployee();
 
 
-                group = new Group(name, shortname, population, yearOfadmission, speciality, classroomteacher);
+                group = new Group(name, shortname, population, yearOfadmission, classroomteacher, speciality);
                 DB.Groups.Add(group);
 
             }

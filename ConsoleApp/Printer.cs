@@ -36,7 +36,7 @@ namespace ConsoleApp
             Console.WriteLine("Сокращение: {0}", group.ShortName) ;
             Console.WriteLine("Численность: {0}", group.Population);
             Console.WriteLine("Год поступления: {0}", group.YearOfAdmission);
-            PrintEmployee(group.Employee);
+            PrintEmployee(group.ClassroomTeacher);
             PrintSpeciality(group.Speciality);
         }
         public static void PrintSpeciality(Speciality speciality)
