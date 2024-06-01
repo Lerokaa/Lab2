@@ -32,9 +32,9 @@ namespace ClassLibrary
         /// <summary>
         /// Ссылка на должность
         /// </summary>
-        private Position speciality;
-        public Position Speciality
-        { get { return speciality; } set { speciality = value; } }
+        private Position position;
+        public Position Position
+        { get { return position; } set { position = value; } }
 
         /// <summary>
         /// Конструктор принимающий следующие аргументы 
@@ -44,13 +44,13 @@ namespace ClassLibrary
         /// <param name="lastName">Фамилия</param>
         /// <param name="firstName">Имя</param>
         /// <param name="patronymicName">Отчество</param>
-        /// <param name="speciality">Ссылка на должность</param>
-        public Employee(string lastName, string firstName, string patronymicName, Position speciality)
+        /// <param name="position">Ссылка на должность</param>
+        public Employee(string lastName, string firstName, string patronymicName, Position position)
         {
             this.lastName = lastName;
             this.firstName = firstName;
             this.patronymicName = patronymicName;
-            this.speciality = speciality;
+            this.position = position;
         }
     }
 }
