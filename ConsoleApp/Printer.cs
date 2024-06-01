@@ -58,5 +58,17 @@ namespace ConsoleApp
             Console.WriteLine("Название дисциплины: {0}", discipline.Name);
             Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
         }
+
+        public static void PrintPosition(Position position)
+        {
+            Console.WriteLine("Должность: {0}", position.Title);
+            Console.WriteLine("Оклад: {0}", position.Salary);
+            PrintDivision(position.Division);
+        }
+        public static void PrintDivision(Division division)
+        {
+            Console.WriteLine("Подразделение: {0}", division);
+
+        }
     }
 }
