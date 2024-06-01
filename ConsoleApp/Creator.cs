@@ -81,6 +81,20 @@ string name = Console.ReadLine();
         Classroom classroom = DB.Classrooms.FirstOrDefault<Classroom>(cl => cl.Name == name);
         if(classroom == null) 
         {
+
+            Console.WriteLine("Введите фамилию сотрудника:");
+            string lastName = Console.ReadLine();
+
+            Console.WriteLine("Введите имя сотрудника:");
+            string firstName = Console.ReadLine();
+
+
+            Console.WriteLine("Введите отчество сотрудника:");
+
+            string patronypicName = Console.ReadLine();
+
+            return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
+
             Console.WriteLine("Введите количество мест?");
             int seatingCapacity;
             while (!int.TryParse(Console.ReadLine(), out seatingCapacity) || seatingCapacity < 0)
@@ -109,6 +123,7 @@ string name = Console.ReadLine();
             }
             DB.Classrooms.Add(classroom);
             
+
         }
         return classroom;
 
