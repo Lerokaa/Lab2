@@ -17,6 +17,7 @@ namespace ConsoleApp
                 Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
                 Console.WriteLine("3.Создать дисциплину");
+                Console.WriteLine("4.Создать группу");
                 Console.WriteLine("6.Создать специальность.");
                 Console.WriteLine("7.Создать пару");
                 Console.WriteLine("8.Создать смену.");
@@ -66,6 +67,11 @@ namespace ConsoleApp
                             Creator.CreateDiscipline();
                             break;
                         }
+                    case 4:
+                        {
+                            Creator.CreateGroup();
+                            break;
+                        }
                     case 6:
                         {
                             Creator.CreateSpeciality();
@@ -101,7 +107,7 @@ namespace ConsoleApp
                             Creator.CreateDivision();
                             break;
                         }
-                    
+
                 }
             }
         }

@@ -33,6 +33,19 @@ namespace ConsoleApp
             Console.WriteLine("Оборудование: {0}", equipment);
         }
 
+
+
+        public static void PrintGroup(Group group)
+        {
+            Console.WriteLine("Название группы: {0}", group.Name);
+            Console.WriteLine("Сокращение: {0}", group.ShortName) ;
+            Console.WriteLine("Численность: {0}", group.Population);
+            Console.WriteLine("Год поступления: {0}", group.YearOfAdmission);
+            PrintEmployee(group.ClassroomTeacher);
+            PrintSpeciality(group.Speciality);
+        }
+
+
         public static void PrintSpeciality(Speciality speciality)
         {
             Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
@@ -70,10 +83,7 @@ namespace ConsoleApp
             Console.WriteLine("Название дисциплины: {0}", discipline.Name);
             Console.WriteLine("Сокращенное название: {0}", discipline.ShortName);
         }
-        public static void PrintGroup(ClassLibrary.Group group)
-        {
-            Console.WriteLine("Группа: {0}", group);
-        }
+
         public static void PrintPair(Pair pair)
         {
             Console.WriteLine("Время начала пары: {0}", pair.PairStart.ToString());
@@ -98,5 +108,6 @@ namespace ConsoleApp
             Console.WriteLine("Оклад: {0}", position.Salary);
             PrintDivision(position.Division);
         }
+
     }
 }
