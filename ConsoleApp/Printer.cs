@@ -26,7 +26,7 @@ namespace ConsoleApp
             Console.WriteLine("Фамилия: {0}", employee.LastName);
             Console.WriteLine("Имя: {0}", employee.FirstName);
             Console.WriteLine("Отчество: {0}", employee.PatronymicName);
-            PrintSpeciality(employee.Speciality);
+            PrintPosition(employee.Speciality);
         }
         public static void PrintEquipment(Equipment equipment)
         {
