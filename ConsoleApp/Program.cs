@@ -85,6 +85,8 @@ namespace ConsoleApp
                     case 9:
                         {
                             Creator.CreateEmployee();
+                            break;
+                        }
 
                     case 7:
                         {
