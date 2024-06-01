@@ -44,7 +44,7 @@ namespace ConsoleApp
         {
             Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
             Console.WriteLine($"Сокращенное название: {speciality.ReductionName}");
-
+        }
         public static void PrintGroup(ClassLibrary.Group group)
         {
             Console.WriteLine("Группа: {0}", group);
