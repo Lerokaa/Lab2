@@ -43,13 +43,6 @@ namespace ConsoleApp
         {
             Console.WriteLine(" Специальность: {0}", speciality);
         }
-        public static void PrintEmployee(Employee employee)
-        {
-            Console.WriteLine("Ответственный сотрудник: {0}", employee);
-        }
-        public static void PrintEquipment(Equipment equipment)
-        {
-            Console.WriteLine("Оборудование: {0}", equipment);
-        }
+       
     }
 }

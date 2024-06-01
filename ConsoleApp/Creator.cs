@@ -59,7 +59,7 @@ namespace ConsoleApp
         {
             return null;
         }
-        public static Speciality CreateSpecialit()
+        public static Speciality CreateSpeciality()
         {
             return null;
         }
