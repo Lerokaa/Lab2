@@ -28,5 +28,13 @@ namespace ConsoleApp
         {
             Console.WriteLine("Оборудование: {0}", equipment);
         }
+        public static void PrintPair(Pair pair)
+        {
+            Console.WriteLine("Время начала пары: {0}", pair.PairStart);
+            Console.WriteLine("Время конца пары: {0}", pair.PairEnd);
+            Console.WriteLine("Времы начала перерыва: {0}", pair.RestStart ?? "Перерыва нет");
+            Console.WriteLine("Время конца перерыва: {0}", pair.RestEnd ?? "Перерыва нет");
+            PrintWorkShift(pair.Shift);
+        }
     }
 }

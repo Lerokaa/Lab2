@@ -11,6 +11,7 @@ namespace ConsoleApp
     {
         public static List<Classroom> Classrooms = new List<Classroom>();
         public static List<Division> Division = new List<Division>();
-        public static List<Lesson> lessons = new List<Lesson>();
+        public static List<Lesson> Lessons = new List<Lesson>();
+        public static List<Pair> Pairs = new List<Pair>();
     }
 }

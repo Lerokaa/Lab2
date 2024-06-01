@@ -72,70 +72,44 @@ namespace ConsoleApp
         private static Pair CreatePair()
         {
             TimeSpan pairstart;
-            bool check = false;
-            while (!check) 
+            Console.Write("Введите время начала пары: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), pairstart)) 
             {
-                try
-                {
-                    Console.Write("Введите время начала пары: ");
-                    pairstart = TimeSpan.Parse(Console.ReadLine());
-                    check = true;
-                }
-                catch
-                {
-                    continue;
-                }
+                Console.Write("Неправильный формат! Введите время начала пары: ");
             }
+
             TimeSpan pairend;
-            check = false;
-            while (!check)
+            Console.Write("Введите время конца пары: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), pairend))
             {
-                try
-                {
-                    Console.Write("Введите время конца пары: ");
-                    pairend = TimeSpan.Parse(Console.ReadLine());
-                    check = true;
-                }
-                catch
-                {
-                    continue;
-                }
+                Console.Write("Неправильный формат! Введите время конца пары: ");
             }
-            TimeSpan reststart;
-            check = false;
-            while (!check)
+
+            TimeSpan reststart = null;
+            Console.Write("Введите время начала перерыва (ничего не вводите, если перерыва нет): ");
+            string _reststart = Console.ReadLine();
+            while (_reststart != "" && (!TimeSpan.TryParse(_reststart, reststart) || reststart < pairstart || reststart > pairend))
             {
-                try
+                Console.Write("Неправильно! Введите время начала перерыва (ничего не вводите, если перерыва нет): ");
+                _reststart = Console.ReadLine();
+            }
+
+            TimeSpan restend = null;
+            if (_reststart != "")
+            {
+                Console.Write("Введите время конца перерыва: ");
+                while (!TimeSpan.TryParse(Console.ReadLine(), restend) || restend < reststart || restend > pairend)
                 {
-                    Console.Write("Введите время начала перерыва: ");
-                    reststart = TimeSpan.Parse(Console.ReadLine());
-                    check = true;
-                }
-                catch
-                {
-                    continue;
+                    Console.Write("Неправильно! Введите время конца перерыва: ");
                 }
             }
 
-            TimeSpan restend;
-            check = false;
-            while (!check)
-            {
-                try
-                {
-                    Console.Write("Введите время конца перерыва: ");
-                    restend = TimeSpan.Parse(Console.ReadLine());
-                    check = true;
-                }
-                catch
-                {
-                    continue;
-                }
-            }
-
+            Console.WriteLine("Введите смену: ");
             WorkShift shift = CreateWorkShift();
 
             Pair pair = new Pair(pairstart, pairend, reststart, restend, shift);
+
+            DB.Pairs.Add(pair);
 
             return pair;
         }
