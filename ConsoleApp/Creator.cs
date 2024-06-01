@@ -68,10 +68,46 @@ namespace ConsoleApp
             return null;
         }
 
-        private static Pair CreatePair()
+        public static Pair CreatePair()
         {
-            return null;
+            TimeSpan pairstart;
+            Console.Write("Введите время начала пары: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), out pairstart))
+            {
+                Console.Write("Неправильный формат! Введите время начала пары: ");
+            }
+
+            TimeSpan pairend;
+            Console.Write("Введите время конца пары: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), out pairend))
+            {
+                Console.Write("Неправильный формат! Введите время конца пары: ");
+            }
+
+            TimeSpan reststart;
+            Console.Write("Введите время начала перерыва: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), out reststart) || reststart < pairstart || reststart > pairend)
+            {
+                Console.Write("Неправильно! Введите время начала перерыва: ");
+            }
+
+            TimeSpan restend;
+            Console.Write("Введите время конца перерыва: ");
+            while (!TimeSpan.TryParse(Console.ReadLine(), out restend) || restend < reststart || restend > pairend)
+            {
+                Console.Write("Неправильно! Введите время конца перерыва: ");
+            }
+
+            Console.WriteLine("Введите смену: ");
+            WorkShift shift = CreateWorkShift();
+
+            Pair pair = new Pair(pairstart, pairend, reststart, restend, shift);
+
+            DB.pairs.Add(pair);
+
+            return pair;
         }
+
 
         public static Classroom CreateClassroom()
         {
@@ -123,6 +159,11 @@ namespace ConsoleApp
         return null;
     }
 
+
+        public static WorkShift CreateWorkShift()
+        {
+            return null;
+        }
 
 
         public static Discipline CreateDiscipline()
