@@ -151,19 +151,31 @@ namespace ConsoleApp
         }
 
         public static Equipment CreateEquipment()
-    {
-        return null;
-    }
-    public static Employee CreateEmployee()
-    {
-        return null;
-    }
+        {
+            return null;
+        }
+        public static Employee CreateEmployee()
+        {
+            Console.WriteLine("Введите фамилию сотрудника:");
+            string lastName = Console.ReadLine();
 
+            Console.WriteLine("Введите имя сотрудника:");
+            string firstName = Console.ReadLine();
+
+
+
+            Console.WriteLine("Введите отчество сотрудника:");
+
+            string patronypicName = Console.ReadLine();
+
+            return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
+        }
 
         public static WorkShift CreateWorkShift()
         {
             return null;
         }
+
 
 
         public static Discipline CreateDiscipline()
@@ -181,8 +193,6 @@ namespace ConsoleApp
             }
             return discipline;
         }
-
-
 
         private static bool ValidateTimeFormat(string time)
         {
@@ -213,13 +223,14 @@ namespace ConsoleApp
             Employee head = CreateEmployee();
             Organization organization = CreateOrganization();
 
-            Console.WriteLine("Введите название организации:");
-            string name = Console.ReadLine();
+            
 
             Division division = DB.Division.FirstOrDefault(l => head == l.Head && organization == l.Organization);
 
             if (division == null)
             {
+                Console.WriteLine("Введите название организации:");
+                string name = Console.ReadLine();
                 division = new Division(name, head, organization);
                 DB.Division.Add(division);
                 Console.WriteLine("Подразделение успешно создано.");
@@ -234,13 +245,8 @@ namespace ConsoleApp
             return null;
         }
 
-        
         public static Position CreatePosition()
         {
-
-            
-
-
             Console.WriteLine("Введите название должности:");
             string title = Console.ReadLine();
 
@@ -260,8 +266,7 @@ namespace ConsoleApp
                 Console.WriteLine("Должность создана");
             }
             return position;
-       
-
+      
         }
     }
 }

@@ -19,6 +19,7 @@ namespace ConsoleApp
                 Console.WriteLine("3.Создать дисциплину");
                 Console.WriteLine("6.Создать специальность.");
                 Console.WriteLine("7.Создать пару");
+                Console.WriteLine("9.Создать сотрудника");
                 Console.WriteLine("10.Создать должность");
                 Console.WriteLine("11.Создать подразделение");
                 
@@ -69,12 +70,19 @@ namespace ConsoleApp
                             Creator.CreateSpeciality();
                             break;
                         }
-
                     case 7:
                         {
                             Creator.CreatePair();
+
                             break;
                         }
+                    case 9:
+                        {
+                            Creator.CreateEmployee();
+                            break;
+                        }
+
+                    
                     case 10:
                         {
                             Creator.CreatePosition();
