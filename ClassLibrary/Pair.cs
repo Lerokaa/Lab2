@@ -8,27 +8,27 @@ namespace ClassLibrary
 {
     public class Pair
     {
-		private DateTime _timePairStart;
-		private DateTime _timePairEnd;
-		private DateTime _timeRestStart;
-		private DateTime _timeRestEnd;
+		private TimeSpan _timePairStart;
+		private TimeSpan _timePairEnd;
+		private TimeSpan _timeRestStart;
+		private TimeSpan _timeRestEnd;
 		private WorkShift _shift;
-		public DateTime PairStart
+		public TimeSpan PairStart
 		{
 			get { return _timePairStart; }
 			set { _timePairStart = value; }
 		}
-		public DateTime PairEnd
+		public TimeSpan PairEnd
 		{
 			get { return _timePairEnd; }
 			set { _timePairEnd = value; }
 		}
-		public DateTime RestStart
+		public TimeSpan RestStart
 		{
 			get { return _timeRestStart; }
 			set { _timeRestStart = value; }
 		}
-		public DateTime RestEnd
+		public TimeSpan RestEnd
 		{
 			get { return _timeRestEnd; }
 			set { _timeRestEnd = value; }
@@ -38,13 +38,13 @@ namespace ClassLibrary
 			get { return _shift; }
 			set { _shift = value; }
 		}
-		public Pair(DateTime timePairStart, DateTime timePairEnd, DateTime timeRestStart, DateTime timeRestEnd, WorkShift shift)
+		public Pair(TimeSpan timePairStart, TimeSpan timePairEnd, TimeSpan timeRestStart, TimeSpan timeRestEnd, WorkShift shift)
 		{
 		    _timePairStart = timePairStart;
-		    _timePairEnd = timePairEnd;
-		    _timeRestStart = timeRestStart;
-		    _timeRestEnd = timeRestEnd;
-		    _shift = shift;
-		}
+            _timePairEnd = timePairEnd;
+            _timeRestStart = timeRestStart;
+            _timeRestEnd = timeRestEnd;
+            _shift = shift;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -70,7 +71,73 @@ namespace ConsoleApp
 
         private static Pair CreatePair()
         {
-            return null;
+            TimeSpan pairstart;
+            bool check = false;
+            while (!check) 
+            {
+                try
+                {
+                    Console.Write("Введите время начала пары: ");
+                    pairstart = TimeSpan.Parse(Console.ReadLine());
+                    check = true;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            TimeSpan pairend;
+            check = false;
+            while (!check)
+            {
+                try
+                {
+                    Console.Write("Введите время конца пары: ");
+                    pairend = TimeSpan.Parse(Console.ReadLine());
+                    check = true;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            TimeSpan reststart;
+            check = false;
+            while (!check)
+            {
+                try
+                {
+                    Console.Write("Введите время начала перерыва: ");
+                    reststart = TimeSpan.Parse(Console.ReadLine());
+                    check = true;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+
+            TimeSpan restend;
+            check = false;
+            while (!check)
+            {
+                try
+                {
+                    Console.Write("Введите время конца перерыва: ");
+                    restend = TimeSpan.Parse(Console.ReadLine());
+                    check = true;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+
+            WorkShift shift = CreateWorkShift();
+
+            Pair pair = new Pair(pairstart, pairend, reststart, restend, shift);
+
+            return pair;
         }
 
         private static Classroom CreateClassroom()
