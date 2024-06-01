@@ -51,6 +51,7 @@ namespace ConsoleApp
             Console.WriteLine($"Название специальности:{speciality.SpecialityName}");
             Console.WriteLine($"Сокращенное название: {speciality.ReductionName}");
         }
+
         public static void PrintDivision(Division division)
 
         {

@@ -16,20 +16,15 @@ namespace ConsoleApp
                 Console.WriteLine("0.Вывести базу данных");
                 Console.WriteLine("1.Создать занятие");
                 Console.WriteLine("2.Создать аудиторию");
-
-                Console.WriteLine("4.Создать группу");
-
                 Console.WriteLine("3.Создать дисциплину");
-                Console.WriteLine("9.Создать сотрудника");
-               Console.WriteLine("11.Создать подразделение");
+                Console.WriteLine("4.Создать группу");
                 Console.WriteLine("6.Создать специальность.");
-                Console.WriteLine("8.Создать смену.");
-
                 Console.WriteLine("7.Создать пару");
-
+                Console.WriteLine("8.Создать смену.");
+                Console.WriteLine("9.Создать сотрудника");
                 Console.WriteLine("10.Создать должность");
-
-
+                Console.WriteLine("11.Создать подразделение");
+                
                 int menu;
                 while (!int.TryParse(Console.ReadLine(), out menu) || menu < 0)
                     Console.WriteLine("Нужно ввести целое число =>0");
@@ -46,16 +41,14 @@ namespace ConsoleApp
                             foreach (Discipline discipline in DB.disciplines)
                                 Printer.PrintDiscipline(discipline);
 
-                          foreach (Division division in DB.Division)
-                                Printer.PrintDivision(division);
                             foreach (Speciality speciality in DB.speciality)
                                 Printer.PrintSpeciality(speciality);
-
-
+                          
+                            foreach (Division division in DB.Division)
+                                Printer.PrintDivision(division);
+                            
                             foreach (Position position in DB.Position)
                                 Printer.PrintPosition(position);
-
-
                             break;
                            
                         }
@@ -68,23 +61,26 @@ namespace ConsoleApp
                         {
                             break;
                         }
-
-                    case 11:
-                        {
-                            Creator.CreateDivision();
-                          break;
-                            }
-                    case 3:
+                     case 3:
                         {
                             Creator.CreateEmployee();
                             Creator.CreateDiscipline();
-
                             break;
                         }
-
+                    case 4:
+                        {
+                            Creator.CreateGroup();
+                            break;
+                        }
                     case 6:
                         {
                             Creator.CreateSpeciality();
+                            break;
+                        }
+                    case 7:
+                        {
+                            Creator.CreatePair();
+
                             break;
                         }
                     case 8:
@@ -99,22 +95,19 @@ namespace ConsoleApp
                             break;
                         }
 
-                    case 7:
-                        {
-                            Creator.CreatePair();
-
-                            break;
-                        }
+                    
                     case 10:
                         {
                             Creator.CreatePosition();
                             break;
                         }
-                    case 4:
+
+                    case 11:
                         {
-                            Creator.CreateGroup();
+                            Creator.CreateDivision();
                             break;
                         }
+
                 }
             }
         }

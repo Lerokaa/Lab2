@@ -236,6 +236,7 @@ namespace ConsoleApp
             }
 
             return division;
+        
         }
 
         private static Organization CreateOrganization()
@@ -317,7 +318,8 @@ namespace ConsoleApp
                 Console.WriteLine("Должность создана");
             }
             return position;
-
         }
+      
+        
     }
 }
