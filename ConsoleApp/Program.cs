@@ -26,6 +26,10 @@ namespace ConsoleApp
                         {
                             foreach (Classroom classroom in DB.Classrooms)
                                 Printer.PrintClassroom(classroom);
+
+                            foreach (Lesson lesson in DB.lessons)
+                                Printer.PrintLesson(lesson);
+
                             foreach (Discipline discipline in DB.disciplines)
                                 Printer.PrintDiscipline(discipline);
                             break;
