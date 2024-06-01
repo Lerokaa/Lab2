@@ -23,7 +23,10 @@ namespace ConsoleApp
         }
         public static void PrintEmployee(Employee employee)
         {
-            Console.WriteLine("Ответственный сотрудник: {0}", employee);
+            Console.WriteLine("Фамилия: {0}", employee.LastName);
+            Console.WriteLine("Имя: {0}", employee.FirstName);
+            Console.WriteLine("Отчество: {0}", employee.PatronymicName);
+            PrintSpeciality(employee.Speciality);
         }
         public static void PrintEquipment(Equipment equipment)
         {
