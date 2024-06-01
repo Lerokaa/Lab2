@@ -33,9 +33,10 @@ namespace ConsoleApp
 
                             foreach (Discipline discipline in DB.disciplines)
                                 Printer.PrintDiscipline(discipline);
-                            break;
-                            foreach(Speciality speciality in DB.speciality) 
+                            foreach (Speciality speciality in DB.speciality)
                                 Printer.PrintSpeciality(speciality);
+                            break;
+                           
                         }
                     case 1:
                         {
