@@ -6,7 +6,39 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    internal class Division
+    public class Division
     {
+        private readonly string name;
+        private readonly Employee head;
+        private readonly Organization organization;
+        public Division(string name, Employee head, Organization organization)
+        {
+            this.name = name;
+            this.head = head;
+            this.organization = organization;
+        }
+        public string Name
+        {
+            get { return name; }
+
+        }
+        public Employee Head
+        {
+            get { return head; }
+
+        }
+        public Organization Organization
+        {
+            get { return organization; }
+
+        }
+
+
+
     }
+
 }
+
+
+
+
