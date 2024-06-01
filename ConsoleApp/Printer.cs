@@ -74,6 +74,10 @@ namespace ConsoleApp
         {
             Console.WriteLine("Пара: {0}", pair);
         }
+        public static void PrintTypeOfActivity(TypeOfActivity typeOfActivity)
+        {
+            Console.WriteLine("Тип активности: {0}", typeOfActivity);
+        }
 
     }
 }
