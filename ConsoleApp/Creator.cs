@@ -206,14 +206,14 @@ namespace ConsoleApp
                 name = Console.ReadLine();
             }
 
-            
-            WorkShift existingWorkShift = DB.WorkShifts.FirstOrDefault(ws => ws.Name == name);
-
-            if (existingWorkShift != null)
+            WorkShift db_shift = DB.WorkShifts.FirstOrDefault(ws => ws.Name == name);
+            if (db_shift != null)
             {
-                Console.WriteLine("Такая смена уже существует.");
-                return existingWorkShift;
+                Console.WriteLine("Такая смена уже есть");
+                return db_shift;
             }
+            
+            
 
           
             WorkShift workShift = new WorkShift(name);

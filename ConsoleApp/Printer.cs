@@ -96,10 +96,7 @@ namespace ConsoleApp
 
 
         
-        public static void PrintWorkShift(WorkShift workShift)
-        {
-            Console.WriteLine("jfkflf: {0}", workShift);
-        }
+      
 
 
     }
