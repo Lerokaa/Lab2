@@ -151,19 +151,31 @@ namespace ConsoleApp
         }
 
         public static Equipment CreateEquipment()
-    {
-        return null;
-    }
-    public static Employee CreateEmployee()
-    {
-        return null;
-    }
+        {
+            return null;
+        }
+        public static Employee CreateEmployee()
+        {
+            Console.WriteLine("Введите фамилию сотрудника:");
+            string lastName = Console.ReadLine();
 
+            Console.WriteLine("Введите имя сотрудника:");
+            string firstName = Console.ReadLine();
+
+
+
+            Console.WriteLine("Введите отчество сотрудника:");
+
+            string patronypicName = Console.ReadLine();
+
+            return new Employee(lastName, firstName, patronypicName, CreateSpeciality());
+        }
 
         public static WorkShift CreateWorkShift()
         {
             return null;
         }
+
 
 
         public static Discipline CreateDiscipline()
@@ -181,8 +193,6 @@ namespace ConsoleApp
             }
             return discipline;
         }
-
-
 
         private static bool ValidateTimeFormat(string time)
         {
@@ -232,14 +242,10 @@ namespace ConsoleApp
                 Console.WriteLine("Специальность успешно создана.");
             }
             return speciality;
-
         }
+
         public static Position CreatePosition()
         {
-
-            
-
-
             Console.WriteLine("Введите название должности:");
             string title = Console.ReadLine();
 
@@ -259,8 +265,6 @@ namespace ConsoleApp
                 Console.WriteLine("Должность создана");
             }
             return position;
-
-
         }
     }
 }

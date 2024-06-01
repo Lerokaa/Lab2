@@ -51,7 +51,7 @@ namespace ConsoleApp
             Console.WriteLine("Организация: {0}", organization);
 
         }
-              public static void PrintLesson(Lesson lesson)
+        public static void PrintLesson(Lesson lesson)
         {
             Console.WriteLine(lesson.DateTime);
             PrintDiscipline(lesson.Discipline);
@@ -83,7 +83,6 @@ namespace ConsoleApp
             Console.WriteLine("Тип активности: {0}", typeOfActivity);
         }
 
-
         public static void PrintPosition(Position position)
         {
             Console.WriteLine("Должность: {0}", position.Title);
@@ -97,6 +96,7 @@ namespace ConsoleApp
         {
             Console.WriteLine();
         }
+
 
     }
 }
