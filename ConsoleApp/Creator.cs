@@ -195,13 +195,14 @@ namespace ConsoleApp
             Employee head = CreateEmployee();
             Organization organization = CreateOrganization();
 
-            Console.WriteLine("Введите название организации:");
-            string name = Console.ReadLine();
+            
 
             Division division = DB.Division.FirstOrDefault(l => head == l.Head && organization == l.Organization);
 
             if (division == null)
             {
+                Console.WriteLine("Введите название организации:");
+                string name = Console.ReadLine();
                 division = new Division(name, head, organization);
                 DB.Division.Add(division);
                 Console.WriteLine("Подразделение успешно создано.");
